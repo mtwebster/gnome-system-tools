@@ -1,0 +1,12 @@
+include $(top_srcdir)/gnome-doc-utils.make
+dist-hook: doc-dist-hook
+
+DOC_MODULE = services-admin
+DOC_ENTITIES = legal.xml
+DOC_INCLUDES = 
+DOC_FIGURES = \
+	figures/services-tool.png
+
+DOC_LINGUAS = ca cs de el en_GB es fr gl oc pl pt_BR sl sv it zh_CN
+
+-include $(top_srcdir)/git.mk

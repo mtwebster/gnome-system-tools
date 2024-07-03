@@ -1,0 +1,29 @@
+Description: add missing declarations
+ Add missing headers and declarations to resolve -Werror=implicit-function-declaration.
+Author: Vladimir Petko <vladimir.petko@canonical.com>
+Bug-Ubuntu: https://bugs.launchpad.net/debian/+source/gnome-system-tools/+bug/2060165
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1066239
+Forwarded: no
+Last-Update: 2024-04-04
+
+--- a/src/shares/shares-tool.h
++++ b/src/shares/shares-tool.h
+@@ -58,6 +58,7 @@
+ };
+
+ GstSharesTool *gst_shares_tool_new (void);
++GType gst_shares_tool_get_type();
+
+
+ G_END_DECLS
+--- a/src/shares/shares-tool.c
++++ b/src/shares/shares-tool.c
+@@ -23,6 +23,8 @@
+ #include "users-table.h"
+ #include <glib/gi18n.h>
+ #include "gst.h"
++#include "table.h"
++#include "share-settings.h"
+
+ static void gst_shares_tool_class_init (GstSharesToolClass *class);
+ static void gst_shares_tool_init       (GstSharesTool      *tool);

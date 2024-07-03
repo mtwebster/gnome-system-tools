@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="pt_BR">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual da Ferramenta de Administração de Rede</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2009</year><holder>Krix Apolinário (Krix Apolinário)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Permissão concedida para copiar, distribuir e/ou modificar este documento sob os termos da GNU Free Documentation License (GFDL), Versão 1.1 ou qualquer versão mais recente publicada pela Free Software Foundation sem seções invariantes, sem textos de capa frontal, e sem textos de contracapa. Você pode encontrar uma cópia da licença GFDL no <ulink type="help" url="ghelp:fdl">link</ulink> ou no arquivo COPYING-DOCS distribuído com este manual.</para>
+         <para>Este manual é parte da coleção de manuais do GNOME distribuído sob os termos da GFDL. Se você quizer distribuir este manual separadamente desta coleção, você pode fazer-lo adicionando ao manual uma cópia da licença, como descrito na seção 6 desta licença.</para>
+
+	<para>Muitos dos nomes usados por empresas para distinguir seus produtos e serviços são reivindicados como marcas registradas. Onde esses nomes aparecem em qualquer documentação do GNOME e os membros do Projeto de Documentação do GNOME estiverem cientes dessas marcas registradas, os nomes aparecerão impressos em letras maiúsculas ou com iniciais em maiúsculas.</para>
+
+	<para>O DOCUMENTO E VERSÕES MODIFICADAS DO DOCUMENTO SÃO FORNECIDOS SOB OS TERMOS DA GNU FREE DOCUMENTATION LICENSE COM O ENTENDIMENTO ADICIONAL DE QUE: <orderedlist>
+		<listitem>
+		  <para>O DOCUMENTO É FORNECIDO NA BASE "COMO ESTÁ", SEM GARANTIAS DE QUALQUER TIPO, TANTO EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO LIMITADO A, GARANTIAS DE QUE O DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO SEJA COMERCIALIZÁVEL, LIVRE DE DEFEITOS, PRÓPRIO PARA UM PROPÓSITO ESPECÍFICO OU SEM INFRAÇÕES. TODO O RISCO A RESPEITO DA QUALIDADE, EXATIDÃO, E DESEMPENHO DO DOCUMENTO OU VERSÕES MODIFICADAS DO DOCUMENTO É DE SUA RESPONSABILIDADE. SE ALGUM DOCUMENTO OU VERSÃO MODIFICADA SE PROVAR DEFEITUOSO EM QUALQUER ASPECTO, VOCÊ (NÃO O ESCRITOR INICIAL, AUTOR OU QUALQUER CONTRIBUIDOR) ASSUME O CUSTO DE QUALQUER SERVIÇO NECESSÁRIO, REPARO OU CORREÇÃO. ESSA RENÚNCIA DE GARANTIAS CONSTITUI UMA PARTE ESSENCIAL DESTA LICENÇA. NENHUM USO DESTE DOCUMENTO OU VERSÃO MODIFICADA DESTE DOCUMENTO É AUTORIZADO SE NÃO FOR SOB ESSA RENÚNCIA; E</para>
+		</listitem>
+		<listitem>
+		  <para>SOB NENHUMA CIRCUNSTÂNCIA E SOB NENHUMA TEORIA LEGAL, TANTO EM DANO (INCLUINDO NEGLIGÊNCIA), CONTRATO, OU OUTROS, DEVEM O AUTOR, ESCRITOR INICIAL, QUALQUER CONTRIBUIDOR, OU QUALQUER DISTRIBUIDOR DO DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO, OU QUALQUER FORNECEDOR DE ALGUMA DESSAS PARTES, SER CONSIDERADOS RESPONSÁVEIS A QUALQUER PESSOA POR QUALQUER DANO, SEJA DIRETO, INDIRETO, ESPECIAL, ACIDENTAL OU CONSEQÜENCIAL DE QUALQUER INDIVÍDUO, INCLUINDO, MAS NÃO LIMITADO A, DANOS POR PERDA DE BOA VONTADE, TRABALHO PARADO, FALHA OU MAU FUNCIONAMENTO DO COMPUTADOR, OU QUALQUER E TODOS OS OUTROS DANOS OU PERDAS RESULTANTES OU RELACIONADOS AO USO DO DOCUMENTO E VERSÕES MODIFICADAS, MESMO QUE TAL PARTE TENHA SIDO INFORMADA DA POSSIBILIDADE DE TAIS DANOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Manual da Ferramenta de administração de rede V2.15.2</revnumber>
+	   <date>Agosto 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Manual da Ferramenta de administração de rede V0.35</revnumber>
+	   <date>Junho 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Este manual descreve a versão 2.15.2 da Ferramenta de administração de rede.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Feedback</title> 
+	 <para>Para relatar um erro ou fazer uma sugestão relacionada à Ferramenta de administração de rede ou deste manual, visite a <ulink url="ghelp:gnome-feedback" type="help">página de feedback do GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>A Ferramenta de administração de rede permite que você especifique a forma como o sistema se conecta a outros computadores e à internet.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Ferramenta de administração de rede</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introdução</title> 
+    <para>A <application>Ferramenta de administração de rede</application> permite que você especifique a forma como o sistema se conecta a outros computadores e à internet.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Primeiros passos</title>
+
+    <para>Você pode iniciar a <application>Ferramenta de administração de rede</application> das seguintes formas:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menu <guimenu>Sistema</guimenu></term>
+	   <listitem>
+		<para>Selecione <menuchoice><guisubmenu>Administração</guisubmenu><guimenuitem>Rede</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Linha de comando</term>
+	   <listitem>
+		<para>Execute o seguinte comando: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Quando você iniciar a <application>Ferramenta de administração de rede</application>, será solicitada a senha do administrador, isso é necessário porque as alterações feitas com esta ferramenta afetarão todo o sistema.</para>
+
+    <para>Após digitar a senha do administrador, a seguinte janela será exibida.</para>
+
+    <figure id="network-main-window">
+	 <title>Janela principal da Ferramenta de administração de rede</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Mostra a janela principal da Ferramenta de administração de rede.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>A janela principal da <application>Ferramenta de administração de rede</application> contém quatro seções tabuladas:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Conexões</guilabel></term>
+	   <listitem>
+		<para>Exibe todas as interfaces de rede, também permite que você altere suas configurações.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>Geral</guilabel></term>
+	   <listitem>
+		<para>Permite que você altere o nome de sua máquina e o nome do domínio.</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Contém duas seções, os <guilabel>servidores de DNS</guilabel> são o que o seu computador usa para resolver os endereços IP a partir dos nomes de domínio. Os <guilabel>domínios de busca</guilabel> são os domínios em que seu sistema irá buscar qualquer máquina quando nenhum domínio for especificado.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Máquinas</guilabel></term>
+	   <listitem>
+		<para>Mostra a lista de apelidos para acessar outros computadores.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Uso</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>Para modificar uma configuração de conexão</title>
+	 <para>Na seção <guilabel>Conexões</guilabel>, selecione a interface que quer modificar e pressione o botão <guilabel>Propriedades</guilabel>, dependendo do tipo de interface que for capaz de modificar dados diferentes.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Interfaces Ethernet e IRLAN</term>
+		<listitem>
+		  <para>Você pode modificar a forma como a interface é configurada (DHCP ou manualmente), se a interface for configurada manualmente, você pode modificar também o endereço IP, máscara de sub-rede ou gateway da interface.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfaces de redes sem fio</term>
+		<listitem>
+		  <para>Você pode modificar a forma como a interface é configurada (DHCP ou manualmente), se a interface for configurada manualmente, você pode modificar também o endereço IP, a máscara de sub-rede e gateway da interface, você pode modificar também o nome da rede (ESSID) para esta interface.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interface por linha paralela</term>
+		<listitem>
+		  <para>Você pode modificar o endereço IP da interface, assim como o endereço IP remoto.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfaces de Modem/PPP</term>
+		<listitem>
+		  <para>Você pode modificar o dispositivo de modem, se deseja discar utilizando tons ou pulsos, o volume do modem, o número do telefone, o usuário e senha que seu servidor ISP forneceu e outras configurações avançadas para PPP.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>Para habilitar ou desativar uma interface</title>
+	 <para>Na seção <guilabel>Conexões</guilabel>, habilite ou desabilite a caixa de seleção ao lado da interface.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>Para alterar o nome de sua máquina e nome de domínio</title>
+	 <para>Na seção <guilabel>Geral</guilabel>, mude as caixas de texto nome da máquina ou nome do domínio.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para adicionar um novo servidor de nomes de domínio</title>
+	 <para>Na seção <guilabel>Servidores DNS</guilabel>, pressione o botão <guilabel>Adicionar</guilabel> e preencha a nova linha da lista com o servidor de nome do domínio novo.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para excluir um servidor de nomes de domínio</title>
+	 <para>Na seção <guilabel>Servidores DNS</guilabel>, selecione um endereço IP de DNS da lista e pressione o botão <guilabel>Excluir</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para adicionar um novo domínio de busca</title>
+	 <para>Na seção <guilabel>Domínios de busca</guilabel>, pressione o botão <guilabel>Adicionar</guilabel> e preencha a nova linha da lista com o novo domínio de busca.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para excluir um domínio de busca</title>
+	 <para>Na seção <guilabel>Domínios de busca</guilabel>, selecione um domínio de busca da lista e pressione o botão <guilabel>Excluir</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para adicionar um novo nome de máquina</title>
+	 <para>Na seção <guilabel>Máquinas</guilabel>, pressione o botão <guilabel>Adicionar</guilabel> e digite um endereço IP e os apelidos para onde apontarão na janela que se abrir.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para modificar um nome de máquina</title>
+	 <para>Na seção <guilabel>Máquinas</guilabel>, selecione um apelido, pressione o botão <guilabel>Propriedades</guilabel> da lista e modifique as configurações do apelido na janela que é aberta.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para excluir um nome de máquina</title>
+	 <para>Na seção <guilabel>Máquinas</guilabel>, selecione um nome da lista e pressione o botão <guilabel>Excluir</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>Para salvar sua configuração de rede atual como "Localização"</title>
+	 <para>Pressione o botão <guilabel>Adicionar</guilabel> ao lado do menu <guilabel>Localizações</guilabel> e especifique o nome do local na janela que é aberta.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para excluir a localização</title>
+	 <para>Pressione o botão <guilabel>Remover</guilabel> ao lado do menu <guilabel>Localizações</guilabel> e o perfil selecionado será removido.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para alternar uma localização</title>
+	 <para>Selecione uma localização do menu <guilabel>Localizações</guilabel>, toda a configuração será alternada automaticamente para a localização escolhida.</para>
+    </sect2>
+  </sect1>
+</article>

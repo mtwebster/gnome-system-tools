@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=
+libdir=
+includedir=
+
+Name: gst
+Description: Gnome System Tools
+Version: @VERSION@
+Requires:
+Libs:
+Cflags:

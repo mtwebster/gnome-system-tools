@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="zh_CN">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>网络管理工具手册</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2009.</year><holder>TeliuTe (teliute@163.com)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>对于本文档的复制、分发和/或修改必须遵循自由软件基金会 (Free Software Foundation) 发布的 GNU 自由文档许可证 (GFDL) 版本 1.1 或更高版本， 该许可证没有固定的部分、没有封面和背页文本。您可以在此<ulink type="help" url="ghelp:fdl">链接</ulink>上或在随本手册一起分发的 COPYING-DOCS 文件中找到 GFDL 的副本。</para>
+         <para>本手册是在 GFDL 许可之下分发的 GNOME 手册集合的一部分。如果想要单独分发此手册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6 部分所述。</para>
+
+	<para>各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 GNOME 文档以及 GNOME 文档项目的成员中，这些名称都是以全大写字母或首字母大写显示，从而表明它们是商标。</para>
+
+	<para>本文档以及文档的修改版本都是在遵循 GNU 自由文档许可证的条款下提供，这表示具有以下含义：<orderedlist>
+		<listitem>
+		  <para>文档按“原样”提供，不提供任何明示或暗示的保证，包括但不限于：文档或文档的修改版本没有适销性方面的缺陷、适合特定目的的适用性，以及没有侵权行为。您将自行承担本文档以及文档修改版本的质量、准确性以及性能方面的风险。如果任何文档或文档修改版本存在缺陷，您(而不是最初的编写者、作者或撰写人)将承担所有必需的服务、维修或更正的费用。此免责声明是本许可证的重要组成部分。如果不接受此免责声明，那么您就没有权利使用任何文档或文档的修改版本；并且</para>
+		</listitem>
+		<listitem>
+		  <para>无论在任何情况以及在任何法律理论下，本文档或文档修改版本的作者、最初的编写者、任何撰写人或任何分发者，或者任意这些方的任何提供者都不对任何人由于使用本文档或文档修改版本引起或带来的任何直接的、间接的、特殊的、偶然的或继发的损失承担任何民事(包括疏忽)、合同或其它方面的责任，这些损失包括但不限于信誉损失、工作停止、计算机失败或故障，或任何以及所有其它损失或由此引发的或与之相关的损失，即使这些方已被告知存在出现此类损失的可能性时也是如此。</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>网络管理工具手册 V2.15.2</revnumber>
+	   <date>2006年8月</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>网络管理工具手册 V0.35</revnumber>
+	   <date>2004年6月</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>本手册讲述的是网络管理工具手册 2.15.2 版。</releaseinfo> 
+
+    <legalnotice> 
+	 <title>反馈</title> 
+	 <para>要报告关于网络管理工具或使用手册中的缺陷，或者提出建议，请参照 <ulink url="ghelp:gnome-feedback" type="help">GNOME 反馈页</ulink> 上的指导。</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>网络管理工具允许您指定系统连接到其他计算机或互联网上的方法。</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>网络管理工具</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>介绍</title> 
+    <para><application>网络管理工具</application> 允许您指定系统连接到其他计算机或互联网的方法。</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>快速入门</title>
+
+    <para>您可以用下面的方法启动 <application>网络管理工具</application>：</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guimenu>系统</guimenu> 菜单</term>
+	   <listitem>
+		<para>选择 <menuchoice><guisubmenu>系统管理</guisubmenu><guimenuitem>网络</guimenuitem></menuchoice>。</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>命令行</term>
+	   <listitem>
+		<para>运行下面的命令：<command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>当您启动 <application>网络管理工具</application> 时，会被提示要求输入管理员密码，这是必要的，因为您的更改会影响到整个系统。</para>
+
+    <para>在输入管理员密码后，显示下面的窗口。</para>
+
+    <figure id="network-main-window">
+	 <title>网络管理工具主窗口</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>显示网络管理工具主窗口。</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para><application>网络管理工具</application> 主窗口包括四个标签面板：</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>连接</guilabel></term>
+	   <listitem>
+		<para>显示所有的网络接口，你还可以设置它们。</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>常规</guilabel></term>
+	   <listitem>
+		<para>允许您设置系统主机名称和域名。</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>包含两项，<guilabel>DNS 服务器</guilabel> 指定您的计算机使用的域名解析服务器地址。<guilabel>搜索域</guilabel> 指定当没有指定域名时，默认的域名。</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>主机</guilabel></term>
+	   <listitem>
+		<para>显示访问其他计算机的别名列表。</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>使用</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>设置一个网络连接</title>
+	 <para>在 <guilabel>连接</guilabel> 面板里，选中您想设置的接口，然后点 <guilabel>属性</guilabel> 按钮，您可以设置的选项多少取决于接口的类型。</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>以太网和红外线(IRLAN)接口</term>
+		<listitem>
+		  <para>您可以设置接口的配置(DHCP 或手动)，如果接口是手动配置，您还可以设置接口的 IP 地址、子网掩码和网关。</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>无线连接</term>
+		<listitem>
+		  <para>您可以设置连接的配置(DHCP 或手动)，如果接口是手动配置，您还可以设置接口的 IP 地址、子网掩码和网关，您也可以设置接口的网络名称(ESSID)。</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>并口连接</term>
+		<listitem>
+		  <para>您可以设置接口的 IP 地址，也设置远程 IP 地址。</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>点对点/调制解调器(PPP/Modem)连接</term>
+		<listitem>
+		  <para>您可以配置“猫”(modem)设备，拨号类型选择音频或拨号(tones/pulses)，“猫”的音量，电话号码，ISP 提供给您的用户名和密码以及其他 PPP 高级设置。</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>激活或不激活一个连接</title>
+	 <para>在 <guilabel>连接</guilabel> 项，选中或不选连接旁边的复选框。</para>
+    </sect2>
+    
+    <sect2>
+	 <title>更改您的主机名和域名</title>
+	 <para>在 <guilabel>常规</guilabel> 项，在相应的文本框里更改主机名或域名。</para>
+    </sect2>
+
+    <sect2>
+	 <title>添加新的域名服务器</title>
+	 <para>在 <guilabel>DNS 服务器</guilabel> 项，点 <guilabel>添加</guilabel> 按钮，在新的列表行里输入新的域名服务器。</para>
+    </sect2>
+
+    <sect2>
+	 <title>删除一个域名服务器</title>
+	 <para>在 <guilabel>DNS 服务器</guilabel> 项，在列表里选择一个 DNS IP 地址，然后点 <guilabel>删除</guilabel> 按钮。</para>
+    </sect2>
+
+    <sect2>
+	 <title>添加一个新的搜索域</title>
+	 <para>在 <guilabel>搜索域</guilabel> 项，点 <guilabel>添加</guilabel> 按钮，在新的列表行里输入新的搜索域。</para>
+    </sect2>
+
+    <sect2>
+	 <title>删除一个搜索域</title>
+	 <para>在 <guilabel>搜索域</guilabel> 项，在列表里选择一个搜索域地址，然后点 <guilabel>删除</guilabel> 按钮。</para>
+    </sect2>
+
+    <sect2>
+	 <title>添加一个新的主机别名</title>
+	 <para>在 <guilabel>主机</guilabel> 项，点 <guilabel>添加</guilabel> 按钮，在弹出的小窗口里输入 IP 地址和别名。</para>
+    </sect2>
+
+    <sect2>
+	 <title>设置主机别名</title>
+	 <para>在 <guilabel>主机</guilabel> 项，在列表里选择一个别名，然后点 <guilabel>属性</guilabel> 按钮，在弹出的小窗口里设置别名。</para>
+    </sect2>
+
+    <sect2>
+	 <title>删除一个主机别名</title>
+	 <para>在 <guilabel>主机</guilabel> 项，从列表里选择一个别名，然后点 <guilabel>删除</guilabel> 按钮。</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>保存您当前的网络配置作为一个“位置”</title>
+	 <para>在 <guilabel>位置栏</guilabel> 旁边的 <guilabel>保存</guilabel> 按钮上点一下，在弹出的小窗口中指定位置的名称。</para>
+    </sect2>
+
+    <sect2>
+	 <title>删除一个位置</title>
+	 <para>点 <guilabel>位置栏</guilabel> 旁边的 <guilabel>删除</guilabel> 按钮上点一下，选中的配置文件将会被删除。</para>
+    </sect2>
+
+    <sect2>
+	 <title>切换到一个位置</title>
+	 <para>在 <guilabel>位置栏</guilabel> 菜单里选一个位置，所有配置信息将自动切换到这个位置的配置。</para>
+    </sect2>
+  </sect1>
+</article>

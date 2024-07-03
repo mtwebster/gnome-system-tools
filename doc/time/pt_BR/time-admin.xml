@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Time Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="pt_BR">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual da Ferramenta de Administração da Hora</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2009</year><holder>Krix Apolinário (krixapolinario@gmail.com)</holder></copyright><copyright><year>2009</year><holder>Leonardo Ferreira Fontenelle (leonardof@gnome.org)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Permissão concedida para copiar, distribuir e/ou modificar este documento sob os termos da GNU Free Documentation License (GFDL), Versão 1.1 ou qualquer versão mais recente publicada pela Free Software Foundation sem Seções Invariantes, sem Textos de Capa Frontal, e sem Textos de Contracapa. Você pode encontrar uma cópia da licença GFDL no <ulink type="help" url="ghelp:fdl">link</ulink> ou no arquivo COPYING-DOCS distribuído com este manual.</para>
+         <para>Este manual é parte da coleção de manuais do GNOME distribuído sob os termos da GFDL. Se você quizer distribuir este manual separadamente desta coleção, você pode fazer-lo adicionando ao manual uma cópia da licença, como descrito na seção 6 desta licença.</para>
+
+	<para>Muitos dos nomes usados por empresas para distinguir seus produtos e serviços são reivindicados como marcas registradas. Onde esses nomes aparecem em qualquer documentação do GNOME e os membros do Projeto de Documentação do GNOME estiverem cientes dessas marcas registradas, os nomes aparecerão impressos em letras maiúsculas ou com iniciais em maiúsculas.</para>
+
+	<para>O DOCUMENTO E VERSÕES MODIFICADAS DO DOCUMENTO SÃO FORNECIDOS SOB OS TERMOS DA GNU FREE DOCUMENTATION LICENSE COM O ENTENDIMENTO ADICIONAL DE QUE: <orderedlist>
+		<listitem>
+		  <para>O DOCUMENTO É FORNECIDO NA BASE "COMO ESTÁ", SEM GARANTIAS DE QUALQUER TIPO, TANTO EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO LIMITADO A, GARANTIAS DE QUE O DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO SEJA COMERCIALIZÁVEL, LIVRE DE DEFEITOS, PRÓPRIO PARA UM PROPÓSITO ESPECÍFICO OU SEM INFRAÇÕES. TODO O RISCO A RESPEITO DA QUALIDADE, EXATIDÃO, E DESEMPENHO DO DOCUMENTO OU VERSÕES MODIFICADAS DO DOCUMENTO É DE SUA RESPONSABILIDADE. SE ALGUM DOCUMENTO OU VERSÃO MODIFICADA SE PROVAR DEFEITUOSO EM QUALQUER ASPECTO, VOCÊ (NÃO O ESCRITOR INICIAL, AUTOR OU QUALQUER CONTRIBUIDOR) ASSUME O CUSTO DE QUALQUER SERVIÇO NECESSÁRIO, REPARO OU CORREÇÃO. ESSA RENÚNCIA DE GARANTIAS CONSTITUI UMA PARTE ESSENCIAL DESTA LICENÇA. NENHUM USO DESTE DOCUMENTO OU VERSÃO MODIFICADA DESTE DOCUMENTO É AUTORIZADO SE NÃO FOR SOB ESSA RENÚNCIA; E</para>
+		</listitem>
+		<listitem>
+		  <para>SOB NENHUMA CIRCUNSTÂNCIA E SOB NENHUMA TEORIA LEGAL, TANTO EM DANO (INCLUINDO NEGLIGÊNCIA), CONTRATO, OU OUTROS, DEVEM O AUTOR, ESCRITOR INICIAL, QUALQUER CONTRIBUIDOR, OU QUALQUER DISTRIBUIDOR DO DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO, OU QUALQUER FORNECEDOR DE ALGUMA DESSAS PARTES, SER CONSIDERADOS RESPONSÁVEIS A QUALQUER PESSOA POR QUALQUER DANO, SEJA DIRETO, INDIRETO, ESPECIAL, ACIDENTAL OU CONSEQÜENCIAL DE QUALQUER INDIVÍDUO, INCLUINDO, MAS NÃO LIMITADO A, DANOS POR PERDA DE BOA VONTADE, TRABALHO PARADO, FALHA OU MAU FUNCIONAMENTO DO COMPUTADOR, OU QUALQUER E TODOS OS OUTROS DANOS OU PERDAS RESULTANTES OU RELACIONADOS AO USO DO DOCUMENTO E VERSÕES MODIFICADAS, MESMO QUE TAL PARTE TENHA SIDO INFORMADA DA POSSIBILIDADE DE TAIS DANOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Manual da Ferramenta de Administração da Hora V2.15.2</revnumber>
+	   <date>Agosto 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Manual da Ferramenta de Administração da Hora V0.35</revnumber>
+	   <date>Junho 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Este manual descreve a versão 2.15.2 da Ferramenta de Administração da Hora.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Feedback</title> 
+	 <para>Para relatar um erro ou fazer uma sugestão relacionada à Ferramenta de Administração da Hora ou deste manual, visite a <ulink url="ghelp:gnome-feedback" type="help">página de feedback do GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>A Ferramenta de Administração da Hora permite a você ajustar hora, data e fuso horário do seu sistema, assim como definir qualquer servidor de hora para sincronizar seu servidor local de hora.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Ferramenta de Administração da Hora</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introdução</title> 
+    <para>A <application>Ferramenta de Administração da Hora</application> permite a você ajustar hora, data e o fuso horário de seu sistema, assim como definir um servidor de hora com o qual sincronizar ser servidor local de hora.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Primeiros passos</title>
+
+    <para>Você pode iniciar a <application>Ferramenta de Administração da Hora</application> das seguintes formas:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guimenu>Sistema</guimenu> menu</term>
+	   <listitem>
+		<para>Vá até <menuchoice><guisubmenu>Administração</guisubmenu><guisubmenu>Hora e data</guisubmenu></menuchoice></para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Menu de contexto no miniaplicativo relógio</term>
+	   <listitem>
+		<para>Vá até <menuchoice><guisubmenu>Ajustar data e hora</guisubmenu></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Linha de comando</term>
+	   <listitem>
+		<para>Execute o seguinte comando: <command>time-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Quando você inciar a <application>Ferramenta de Administração da Hora</application>, será solicitada a senha do administrador. Isso é necessário porque as alterações feitas com esta ferramenta afetarão todo o sistema.</para>
+
+    <para>Após digitar a senha do administrador, a janela de configuração da hora será exibida.</para>
+
+    <figure id="time-main-window-automatic">
+	 <title>Janela principal da Ferramenta de Administração da Hora, modo de configuração automático</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/time-tool-automatic.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Mostra a janela principal da Ferramenta de Administração da Hora, modo de configuração automática.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <figure id="time-main-window-manual">
+	 <title>Janela principal da Ferramenta de Administração da Hora, modo de configuração manual</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/time-tool-manual.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Mostra a janela principal da Ferramenta de Administração da Hora, modo de configuração manual.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>A <application>Ferramenta de Administração da Hora</application> contém os seguintes elementos:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Fuso horário</term>
+	   <listitem>
+		<para>Exibe o fuso horário atual, o botão exibe um mapa para selecionar o fuso horário.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Tipo de Configuração</term>
+	   <listitem>
+	     <para>Pode ser qualquer um:</para>
+	     <variablelist>
+	       <varlistentry>
+	         <term><guilabel>Manter sincronizado com servidores na Internet</guilabel></term>
+		 <listitem>
+		   <para>Você poderá escolher de uma lista de servidores na Internet para manter o relógio do computador sincronizado automaticamente.</para>
+		 </listitem>
+	       </varlistentry>
+	       <varlistentry>
+	         <term><guilabel>Manual</guilabel></term>
+		 <listitem>
+		   <para>Você poderá especificar manualmente a data e hora.</para>
+		 </listitem>
+	       </varlistentry>
+	     </variablelist>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>Sincronizar agora</guilabel> botão</term>
+	   <listitem>
+		<para>Isto permitirá que você sincronize apenas uma vez com os servidores na internet selecionados.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Uso</title>
+
+    <sect2>
+	 <title>Modificando hora ou data</title>
+	 <para>Apenas mude as teclas da rotação do tempo ou a data no calendário.</para>
+    </sect2>
+
+    <sect2 id="tool-time-zone">
+	 <title>Mudando seu fuso horário</title>
+	 <para>Clique no botão do <guilabel>fuso horário selecionado</guilabel> e selecione a nova localização, ou então selecione a nova localização da lista abaixo.</para>
+
+	 <figure id="time-map-window">
+	   <title>Mapa da Ferramenta de Administração da Hora</title>
+	   <screenshot>
+		<mediaobject>
+		  <imageobject>
+		    <imagedata fileref="figures/time-map.png" format="PNG"/>
+		  </imageobject>
+		  <textobject>
+		    <phrase>Mostra a janela do mapa da Ferramenta de Administração da Hora</phrase>
+		  </textobject>
+		</mediaobject>
+	   </screenshot>
+	 </figure>
+    </sect2>
+
+    <sect2 id="tool-time-servers">
+	 <title>Sincronizando seu servidor local de hora com servidores de hora na Internet</title>
+	 <para>Se a caixa de seleção estiver desabilitada, habilite-a. Então clique no botão <guilabel>Selecionar servidores</guilabel> e selecione um novo servidor na lista.</para>
+
+	 <figure id="time-servers-window">
+	   <title>Janela dos servidores da Ferramenta de Administração da Hora</title>
+	   <screenshot>
+		<mediaobject>
+		  <imageobject>
+		    <imagedata fileref="figures/time-servers.png" format="PNG"/>
+		  </imageobject>
+		  <textobject>
+		    <phrase>Mostra a janela dos servidores da Ferramenta de Administração da Hora</phrase>
+		  </textobject>
+		</mediaobject>
+	   </screenshot>
+	 </figure>
+    </sect2>
+  </sect1>
+</article>

@@ -1,0 +1,49 @@
+Source: gnome-system-tools
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Andriy Grytsenko <andrej@rep.kiev.ua>
+Build-Depends: cdbs (>= 0.4.93~),
+               intltool (>= 0.35.0),
+               debhelper (>= 10),
+               liboobs-1-dev (>= 2.91.1),
+               libgtk-3-dev (>= 2.91),
+               libglib2.0-dev (>= 2.25.3),
+               libdbus-1-dev (>= 0.32),
+               libpolkit-gobject-1-dev (>= 0.97),
+               system-tools-backends-dev (>= 2.10.1),
+               gettext,
+               libxml-parser-perl,
+               gnome-pkg-tools,
+               yelp-tools,
+               pkg-config
+Standards-Version: 4.5.0
+Homepage: https://github.com/LStranger/gnome-system-tools
+Vcs-Browser: https://github.com/LStranger/gnome-system-tools-debian
+Vcs-Git: https://github.com/LStranger/gnome-system-tools-debian.git
+
+Package: gnome-system-tools
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         policykit-1-gnome | mate-polkit
+Recommends: packagekit,
+            yelp
+Suggests: ntp
+Replaces: ximian-setup-tools, gnome-network-admin
+Conflicts: gnome-network-admin
+Provides: gnome-network-admin
+Description: Cross-platform configuration utilities
+ These System Tools (known as GNOME System Tools) are a set of tools aimed to
+ make easy the job that means the computer administration on an UNIX or Linux
+ system. They're thought to help from the new Linux or UNIX user to the system
+ administrators.
+ .
+ Its main advantages are:
+  * An user-friendly interface to carry out the main administration tasks.
+  * The use of a common user interface in every system.
+  * A common structure that makes easy the development of new system tools.
+ Nowadays there are tools for managing:
+  - Users and groups
+  - Date and time
+  - Shares (NFS and Samba)

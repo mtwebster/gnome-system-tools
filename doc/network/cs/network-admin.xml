@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="cs">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Příručka k Nástroji pro správu sítě</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2009.</year><holder>Marek Černocký (marek@manet.cz)</holder></copyright><copyright><year>2009.</year><holder>Lucas Lommer (llommer@svn.gnome.org)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU Free Documentation License, verze 1.1 nebo jakékoli další verze vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů předních desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu jménem <ulink type="help" url="ghelp:fdl">GNU Free Documentation License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou.</para>
+         <para>Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, musíte přiložit kopii licence dle popisu v sekci 6 dané licence.</para>
+
+	<para>Mnoho užívaných jmen určených k zviditelnění produktů nebo služeb jsou ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s velkým písmenem na začátku.</para>
+
+	<para>DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <orderedlist>
+		<listitem>
+		  <para>DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE</para>
+		</listitem>
+		<listitem>
+		  <para>ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN (VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Příručka V2.15.2 k Nástroji pro správu sítě</revnumber>
+	   <date>Srpen 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Příručka V0.35 k Nástroji pro správu sítě</revnumber>
+	   <date>Červen 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Tato příručka popisuje Nástroj pro správu sítě ve verzi 2.15.2</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Ohlasy</title> 
+	 <para>Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k Nástroji pro správu sítě nebo této příručce, postupujte dle instrukcí na stránce <ulink url="ghelp:gnome-feedback" type="help">Stránka s ohlasy na GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Nástroj pro správu sítě vám umožňuje určit způsob vašeho připojení k dalším počítačům a do Internetu.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Nástroj pro správu sítě</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Úvod</title> 
+    <para><application>Nástroj pro správu sítě</application> vám umožňuje určit způsob vašeho připojení k dalším počítačům a do Internetu.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Začínáme</title>
+
+    <para><application>Nástroj pro správu sítě</application> můžete spustit následujícími způsoby:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Nabídka <guimenu>Systém</guimenu></term>
+	   <listitem>
+		<para>Zvolte <menuchoice><guisubmenu>Správa</guisubmenu><guimenuitem>Síť</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Příkazový řádek</term>
+	   <listitem>
+		<para>Spusťte následující příkaz: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Když spustíte <application>Nástroj pro správu sítě</application>, budete dotázáni na heslo správce. To je nutné, protože změny provedené tímto nástrojem ovlivní celý systém.</para>
+
+    <para>Po zadání hesla správce se zobrazí následující okno.</para>
+
+    <figure id="network-main-window">
+	 <title>Hlavní okno Nástroje pro správu sítě</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Ukazuje hlavní okno Nástroje pro správu sítě.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Hlavní okno <application>Nástroje pro správu sítě</application> obsahuje následující části:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Připojení</guilabel></term>
+	   <listitem>
+		<para>Zobrazuje všechna síťová rozhraní a umožňuje vám změnit jejich nastavení.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>Obecné</guilabel></term>
+	   <listitem>
+		<para>Umožňuje měnit název vašeho počítače a název domény.</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Obsahuje dvě části. <guilabel>Servery DNS</guilabel>, které používá váš počítač pro překlad doménových názvů na adresy IP. <guilabel>Prohledávat domény</guilabel> je seznam domén, ve kterých bude váš systém hledat počítače, u kterých není doména uvedená.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Počítače</guilabel></term>
+	   <listitem>
+		<para>Zobrazuje seznam přezdívek počítačů, které slouží pro přístup k nim.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Použití</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>Změna nastavení připojení</title>
+	 <para>Na kartě <guilabel>Připojení</guilabel> vyberte rozhraní, které chcete upravit a zmáčkněte tlačítko <guilabel>Vlastnosti</guilabel>. Údaje, které můžete upravit se liší podle typu rozhraní.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Rozhraní Ethernet a IRLAN</term>
+		<listitem>
+		  <para>Můžete měnit způsob, jakým se rozhraní nastavuje (DHCP nebo ručně). Pokud se rozhraní nastavuje ručně, můžete také zadat adresu IP, síťovou masku a bránu.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Rozhraní bezdrátové sítě</term>
+		<listitem>
+		  <para>Můžete měnit způsob, jakým se rozhraní nastavuje (DHCP nebo ručně). Pokud se rozhraní nastavuje ručně, můžete také zadat adresu IP, síťovou masku a bránu. U tohoto rozhraní můžete navíc měnit název sítě (ESSID).</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Rozhraní paralelní linky</term>
+		<listitem>
+		  <para>Můžete měnit adresu IP a vzdálenou adresu IP.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Rozhraní PPP/Modem</term>
+		<listitem>
+		  <para>Můžete měnit zařízení modemu, zda má vytáčet tónově nebo pulsně, jeho hlasitost, telefonní číslo, přihlašovací jméno a heslo přidělené vaším poskytovatelem a další pokročilá nastavení protokolu PPP.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>Aktivace a deaktivace rozhraní</title>
+	 <para>Na kartě <guilabel>Připojení</guilabel> povolíte nebo zakážete rozhraní pomocí zaškrtávacích polí po straně seznamu.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>Změna názvu vašeho počítače nebo doménového jména.</title>
+	 <para>Na kartě <guilabel>Obecné</guilabel> změňte v textovém poli název počítače a/nebo název domény.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Přidání nového doménového serveru</title>
+	 <para>Na kartě <guilabel>DNS</guilabel> v části <guilabel>Servery DNS</guilabel> zmáčkněte tlačítko <guilabel>Přidat</guilabel> a v nově přidaném řádku seznamu vyplňte nový doménový server.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Smazání doménového serveru</title>
+	 <para>Na kartě <guilabel>DNS</guilabel> v části <guilabel>Servery DNS</guilabel> vyberte v seznamu server DNS a zmáčkněte tlačítko <guilabel>Smazat</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Přidání nové prohledávané domény</title>
+	 <para>Na kartě <guilabel>DNS</guilabel> v části <guilabel>Prohledávat domény</guilabel> zmáčkněte tlačítko <guilabel>Přidat</guilabel> a v nově přidaném řádku seznamu vyplňte novou prohledávanou doménu.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Smazání prohledávané domény</title>
+	 <para>Na kartě <guilabel>DNS</guilabel> v části <guilabel>Servery DNS</guilabel> vyberte v seznamu prohledávanou doménu a zmáčkněte tlačítko <guilabel>Smazat</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Přidání nové přezdívky počítače</title>
+	 <para>Na kartě <guilabel>Počítače</guilabel> zmáčkněte tlačítko <guilabel>Přidat</guilabel>. V dialogovém okně, které se objeví, zadejte adresu IP a přezdívku.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Změna přezdívky počítače</title>
+	 <para>Na kartě <guilabel>Počítače</guilabel> vyberte přezdívku a zmáčkněte tlačítko <guilabel>Vlastnosti</guilabel>. V dialogovém okně, které se objeví, upravte adresu IP a/nebo přezdívku.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Smazání přezdívky počítače</title>
+	 <para>Na kartě <guilabel>Počítače</guilabel> vyberte přezdívku a zmáčkněte tlačítko <guilabel>Smazat</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>Uložení vašeho současného nastavení sítě jako „Umístění“</title>
+	 <para>Zmáčkněte tlačítko s popiskem <guilabel>Uložit současné nastavení sítě jako umístění</guilabel> vedle nabídky <guilabel>Umístění</guilabel> a v dialogovém okně, které se objeví, zadejte název umístění.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Smazání umístění</title>
+	 <para>Zmáčkněte tlačítko s popiskem <guilabel>Odstranit aktuální umístění</guilabel> vedle nabídky <guilabel>Umístění</guilabel> a vybrané umístění bude vymazáno.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Přepnutí umístění</title>
+	 <para>V nabídce <guilabel>Umístění</guilabel> vyberte umístění a veškerá nastavení se automaticky změní podle tohoto umístění.</para>
+    </sect2>
+  </sect1>
+</article>

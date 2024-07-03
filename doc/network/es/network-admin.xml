@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="es">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual de la Herramienta de administración de red</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2007-2008.</year><holder>Jorge González (jorgegon@svn.gnome.org)</holder></copyright><copyright><year>2006.</year><holder>Francisco Javier F. Serrador (serrador@cvs.gnome.org)</holder></copyright><copyright><year>2006.</year><holder>Rodrigo Marcos Fombellida (rmarcos@cvs.gnome.org)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Se concede autorización para copiar, distribuir o modificar este documento según los términos de la GFDL (GNU Free Documentation License), Versión 1.1, o cualquier otra versión posterior publicada por Free Software Foundation sin secciones invariables, textos de portada ni textos de contraportada. Podrá encontrar una copia de la GFDL en este <ulink type="help" url="ghelp:fdl">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual.</para>
+         <para>Este manual forma parte de una colección de manuales de GNOME distribuidos con la GFDL. Si desea distribuir este manual independientemente de la colección, puede hacerlo añadiendo al manual una copia de la licencia, como se describe en el apartado 6 de la licencia.</para>
+
+	<para>Muchos de los nombres utilizados por las empresas para diferenciar sus productos y servicios son marcas comerciales. Cuando estos nombres aparecen en cualquier documentación de GNOME y dichas marcas comerciales se ponen en conocimiento de los miembros del Proyecto de documentación de GNOME, entonces los nombres aparecen en mayúsculas o con la inicial en mayúsculas.</para>
+
+	<para>EL DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE PROPORCIONAN CON SUJECIÓN A LOS TÉRMINOS DE LA GFDL, QUEDANDO BIEN ENTENDIDO, ADEMÁS, QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENTO SE PROPORCIONA "TAL CUAL", SIN GARANTÍAS DE NINGÚN TIPO, NI EXPRESAS NI IMPLÍCITAS, INCLUYENDO, SIN LIMITACIÓN, CUALQUIER GARANTÍA DE QUE EL DOCUMENTO O UNA VERSIÓN MODIFICADA DEL MISMO CAREZCAN DE DEFECTOS, SEA COMERCIALIZABLE, ADECUADO PARA UNA FINALIDAD DETERMINADA O QUE NO CONSTITUYA NINGUNA INFRACCIÓN. TODO EL RIESGO EN CUANTO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O DE CUALQUIER VERSIÓN MODIFICADA DEL MISMO LE CORRESPONDE A USTED. EN CASO DE QUE CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA RESULTARA DEFECTUOSO EN CUALQUIER SENTIDO, SERÁ USTED (Y NO EL REDACTOR INICIAL, NI EL AUTOR NI CUALQUIER PERSONA QUE HAYA CONTRIBUIDO) QUIEN ASUMIRÁ EL COSTE DE CUALQUIER SERVICIO TÉCNICO, REPARACIÓN O CORRECCIÓN NECESARIOS. ESTA LIMITACIÓN DE LAS GARANTÍAS CONSTITUYE UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA NINGÚN USO DE CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DEL MISMO SI NO ES CON SUJECIÓN A ESTA LIMITACIÓN DE LAS GARANTÍAS; Y</para>
+		</listitem>
+		<listitem>
+		  <para>EN NINGUNA CIRCUNSTANCIA NI SEGÚN NINGÚN ARGUMENTO LEGAL, SEA POR MOTIVOS CULPOSOS (INCLUIDA LA NEGLIGENCIA), CONTRACTUALES O DE OTRO TIPO, NI EL AUTOR, NI EL REDACTOR INICIAL, NI CUALQUIER COLABORADOR, NI CUALQUIER DISTRIBUIDOR DEL DOCUMENTO O VERSIÓN MODIFICADA DEL MISMO, NI CUALQUIER PROVEEDOR DE CUALQUIERA DE DICHAS PARTES, SERÁN RESPONSABLES, ANTE NINGÚN TERCERO, DE NINGÚN DAÑO O PERJUICIO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O CONSIGUIENTE DE NINGÚN TIPO, INCLUIDOS, SIN LIMITACIÓN, LOS DAÑOS POR PÉRDIDA DE FONDO DE COMERCIO, INTERRUPCIÓN DEL TRABAJO, FALLO O MAL FUNCIONAMIENTO INFORMÁTICO, NI CUALQUIER OTRO DAÑO O PÉRDIDA DERIVADOS DEL USO DEL DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO, O RELACIONADO CON ELLO, INCLUSO SI SE HABÍA COMUNICADO A AQUELLA PARTE LA POSIBILIDAD DE TALES DAÑOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Manual de la Herramienta de administración de red V2.15.2</revnumber>
+	   <date>Agosto de 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Manual de la Herramienta de administración de red V0.35</revnumber>
+	   <date>Junio de 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Este manual describe la versión 2.15.2 de la Herramienta de Administración de Red.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Sugerencias e informe de errores</title> 
+	 <para>Para informar de un error o hacer sugerencias sobre la Herramienta de Administración de red o sobre este manual, sigue las indicaciones en la <ulink url="ghelp:gnome-feedback" type="help">Página de sugerencias e informe de errores de Gnome</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>La Herramienta de administración de red le permite especificar la forma en la que su sistema se conecta a otros equipos y a Internet.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Herramienta de administración de red</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introducción</title> 
+    <para>La <application>Herramienta de administración de red</application> le permite especificar la forma en la que su sistema se conecta a otros equipos y a Internet.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Cómo empezar</title>
+
+    <para>Puede iniciar la <application>Herramienta de administración de red</application> de las siguientes formas:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menú <guimenu>Sistema</guimenu></term>
+	   <listitem>
+		<para>Elija <menuchoice><guisubmenu>Administración</guisubmenu><guimenuitem>Red</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Línea de comandos</term>
+	   <listitem>
+		<para>Ejecute el siguiente comando: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Al iniciar la <application>Herramienta de administración de red</application>, se le preguntará la contraseña de administrador. Esto es necesario porque los cambios realizados con esta herramienta afectarán a todo el sistema.</para>
+
+    <para>Despues de introducir la contraseña de administrador, se muestra la siguiente ventana.</para>
+
+    <figure id="network-main-window">
+	 <title>Ventana principal de la Herramienta de administración de red</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Muestra la ventana principal de la Herramienta de administración de red.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>La ventana principal de la <application>Herramienta de Administración de Red</application> contiene 4 secciones solapadas:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Conexiones</guilabel></term>
+	   <listitem>
+		<para>Muestra todas las interfaces de red, también le permite modificar sus ajustes.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>General</guilabel></term>
+	   <listitem>
+		<para>Le permite modificar el nombre de host de su sistema y el nombre de dominio.</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Contiene dos secciones, los <guilabel>Servidores DNS</guilabel> son los que usa su equipo para resolver las direcciones IP de los nombres de dominio. Los <guilabel>Dominios de búsqueda</guilabel> son los dominios predeterminados en los que su sistema buscará cualquier host donde no se especifique el dominio.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Hosts</guilabel></term>
+	   <listitem>
+		<para>Muestra la lista de alias para acceder a otros equipos.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Uso</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>Cómo modificar los ajustes de una conexión</title>
+	 <para>En la sección <guilabel>Conexiones</guilabel>, seleccione la interfaz que desea modificar y pulse el botón <guilabel>Propiedades</guilabel>. Dependiendo del tipo de interfaz podrá modificar distintos datos.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Interfaces Ethernet e IRLAN</term>
+		<listitem>
+		  <para>Puede cambiar la forma en la que la interfaz se configura (DHCP, o manualmente). Si la interfaz se configura manualmente, puede además modificar la dirección IP de la interfaz, la máscara de red y la puerta de enlace.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfaces inalámbricas</term>
+		<listitem>
+		  <para>Puede cambiar la forma en la que la interfaz se configura (DHCP, o manualmente). Si la interfaz se configura manualmente, puede además modificar su dirección IP, la máscara de red y la puerta de enlace. También puede especificar un nombre de red (ESSID) para esta interfaz.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfaces de línea paralela</term>
+		<listitem>
+		  <para>Puede cambiar la dirección IP de la interfaz, así como la dirección IP remota.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfaces PPP/Módem</term>
+		<listitem>
+		  <para>Puede modificar en el módem, si quiere llamar usando tonos o impulsos, el volumen del módem, el número de teléfono, el nombre de usuario y la contraseña que su proveedor le suministró, así como otras opciones avanzadas de PPP.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo activar o desactivar una interfaz</title>
+	 <para>En la sección <guilabel>Conexiones</guilabel>, active o desactive la casilla junto al interfaz.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>Cómo cambiar el nombre de host y el nombre de dominio</title>
+	 <para>En la sección <guilabel>General</guilabel>, cambie el nombre de host o el nombre de dominio en las cajas de texto.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo añadir un servidor de nombres de dominio nuevo</title>
+	 <para>En la sección <guilabel>Servidores de DNS</guilabel>, pulse el botón <guilabel>Añadir</guilabel> y rellene la fila nueva de la lista con el nombre de dominio nuevo.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo borrar un servidor de nombres de dominio</title>
+	 <para>En la sección <guilabel>Servidores DNS</guilabel>, seleccione una dirección IP de DNS de la lista y pulse el botón <guilabel>Borrar</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo añadir un nuevo dominio de búsqueda</title>
+	 <para>En la sección <guilabel>Dominios de búsqueda</guilabel>, pulse el botón <guilabel>Añadir</guilabel> y rellene la fila nueva de la lista con el dominio de búsqueda nuevo.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo borrar un dominio de búsqueda</title>
+	 <para>En la sección <guilabel>Dominios de búsqueda</guilabel>, seleccione un dominio de búsqueda de la lista y pulse el botón <guilabel>Borrar</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para añadir un alias de host nuevo</title>
+	 <para>En la sección <guilabel>Hosts</guilabel>, pulse el botón <guilabel>Añadir</guilabel> y teclee una dirección IP y los alias que apuntarán allí en la ventana que aparecerá.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo modificar un alias de host</title>
+	 <para>En la sección <guilabel>Hosts</guilabel>, seleccione un alias, pulse en el botón <guilabel>Propiedades</guilabel> de la lista y modifique los ajustes del alias en la ventana que aparece.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para borrar un alias de host</title>
+	 <para>En la sección <guilabel>Hosts</guilabel>, seleccione un alias de la lista y pulse el botón <guilabel>Borrar</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>Para guardar su configuración de red actual como una «Lugar»</title>
+	 <para>Pulse el botón <guilabel>Añadir</guilabel> junto al menú <guilabel>Lugares</guilabel>, especifique el nombre del lugar en la ventana que aparecerá.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Cómo borrar un lugar</title>
+	 <para>Pulse el botón <guilabel>Quitar</guilabel> junto al menú <guilabel>Lugares</guilabel>, el perfil seleccionado se borrará.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para cambiar a un lugar</title>
+	 <para>Seleccione un lugar desde el menú <guilabel>Lugares</guilabel>, toda la configuración cambiará automáticamente a la del perfil elegido.</para>
+    </sect2>
+  </sect1>
+</article>

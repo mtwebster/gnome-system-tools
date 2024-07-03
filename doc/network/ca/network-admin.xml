@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="ca">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual de l'eina d'administració de la xarxa</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2007</year><holder>Joan Duran (jodufi@gmail.com)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Teniu permís per a copiar, distribuir i/o modificar aquest document, sota els termes de la Llicència de documentació lliure GNU (GFDL), versió 1.1 o qualsevol versió publicada posteriorment per la Free Software Foundation, sense seccions invariants, sense texts de portada i sense texts de contraportada. Podeu trobar una còpia de la GFDL en aquest <ulink type="help" url="ghelp:fdl">enllaç</ulink> o en el fitxer COPYING-DOCS distribuït amb aquest manual.</para>
+         <para>Aquest manual forma part d'una col·lecció de manuals del GNOME distribuïts sota la GFDL. Si voleu distribuir aquest manual independentment de la col·lecció, podeu fer-ho afegint una còpia de la llicència al manual, tal com es descriu a la secció 6 de la llicència.</para>
+
+	<para>Molts dels noms que les empreses utilitzen per a distingir els seus productes i serveis es consideren marques comercials. Quan aquests noms apareguin en qualsevol documentació del GNOME, si els membres del Projecte de documentació del GNOME han estat avisats pel que fa a les marques, els noms apareixeran en majúscules o amb les inicials en majúscules.</para>
+
+	<para>EL DOCUMENT I LES VERSIONS MODIFICADES DEL DOCUMENT S'OFEREIXEN SOTA ELS TERMES DE LA LLICÈNCIA DE DOCUMENTACIÓ LLIURE DE GNU, TENINT EN COMPTE QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENT S'OFEREIX «TAL COM ÉS», SENSE CAP TIPUS DE GARANTIA, NI EXPLÍCITA NI IMPLÍCITA; AIXÒ INCLOU, SENSE LIMITAR-S'HI, LES GARANTIES QUE EL DOCUMENT O LA VERSIÓ MODIFICADA DEL DOCUMENT NO TINGUI DEFECTES, SIGUI COMERCIALITZABLE, SIGUI ADEQUAT PER A UN ÚS CONCRET O NO INFRINGEIXI CAP LLEI. TOT EL RISC PEL QUE FA A LA QUALITAT, EXACTITUD I RENDIMENT DEL DOCUMENT O LA VERSIÓ MODIFICADA DEL DOCUMENT ÉS VOSTRE. EN CAS QUE EL DOCUMENT RESULTÉS DEFECTUÓS EN QUALSEVOL ASPECTE, VÓS (NO PAS L'ESCRIPTOR INICIAL, L'AUTOR O CAP ALTRE COL·LABORADOR) ASSUMIU TOT EL COST DE MANTENIMENT, REPARACIÓ O CORRECCIÓ. AQUESTA RENÚNCIA DE GARANTIA CONSTITUEIX UNA PART ESSENCIAL D'AQUESTA LLICÈNCIA. NO S'AUTORITZA L'ÚS DE CAP DOCUMENT O VERSIÓ MODIFICADA DEL DOCUMENT EXCEPTE SOTA AQUESTA RENÚNCIA DE GARANTIA; I </para>
+		</listitem>
+		<listitem>
+		  <para>EN CAP CAS I SOTA CAP INTERPRETACIÓ LEGAL, JA SIGUI PER AGREUJAMENT (INCLOENT-HI LA NEGLIGÈNCIA), CONTRACTE O ALTRE CAS, L'AUTOR, L'ESCRIPTOR ORIGINAL, QUALSEVOL DELS COL·LABORADORS O DISTRIBUÏDORS DEL DOCUMENT O UNA VERSIÓ MODIFICADA DEL DOCUMENT NI CAP PROVEÏDOR D'AQUESTES PARTS NO SERAN RESPONSABLES DAVANT DE NINGÚ PER CAP DANY DIRECTE, INDIRECTE, ESPECIAL, ACCIDENTAL O CONSECUTIU DE QUALSEVOL TIPUS; AIXÒ INCLOU, SENSE LIMITAR-S'HI, ELS DANYS PER PÈRDUA DE CLIENTS, INTERRUPCIONS DE LA FEINA, FALLADA O MALFUNCIONAMENT DE L'ORDINADOR, O QUALSEVOL ALTRA PÈRDUA O DANY RELACIONAT AMB L'ÚS DEL DOCUMENT I LES VERSIONS MODIFICADES DEL DOCUMENT, FINS I TOT SI S'HA INFORMAT AQUESTA PART DE LA POSSIBILITAT D'AQUESTS DANYS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Manual de l'eina d'administració de la xarxa v2.15.2</revnumber>
+	   <date>Agost del 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Manual de l'eina d'administració de la xarxa v0.35</revnumber>
+	   <date>Juny del 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Aquest manual descriu la versió 2.15.2 de l'eina d'administració de la xarxa.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Comentaris</title> 
+	 <para>Per a informar d'un error o fer algun suggeriment quant a l'<application>eina d'administració de la xarxa</application> o aquest manual, seguiu les indicacions a la <ulink url="ghelp:gnome-feedback" type="help">Pàgina de comentaris del GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>L'eina d'administració de la xarxa us permet especificar de quina manera el vostre sistema es connectarà a altres ordinadors i a Internet.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Eina d'administració de la xarxa</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introducció</title> 
+    <para>L'<application>eina d'administració de la xarxa</application> us permet especificar de quina manera el vostre sistema es connectarà a altres ordinadors i a Internet.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Inici</title>
+
+    <para>Podeu iniciar l'<application>eina d'administració de la xarxa</application> de les següents maneres:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menú <guimenu>Sistema</guimenu></term>
+	   <listitem>
+		<para>Trieu <menuchoice><guisubmenu>Administració</guisubmenu><guimenuitem>Xarxa</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Línia d'ordres</term>
+	   <listitem>
+		<para>Executeu la següent ordre: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Quan inicieu l'<application>eina d'administració de la xarxa</application> se us demanarà la contrasenya de l'administrador. Això és necessari perquè els canvis realitzats amb aquesta eina afectaran tot el sistema.</para>
+
+    <para>Després d'introduir la contrasenya de l'administrador, es mostrarà la següent finestra.</para>
+
+    <figure id="network-main-window">
+	 <title>Finestra principal de l'eina d'administració de la xarxa</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Mostra la finestra principal de l'eina d'administració de la xarxa.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>La finestra principal de l'<application>eina d'administració de la xarxa</application> conté els següents elements:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Connexions</guilabel></term>
+	   <listitem>
+		<para>Mostra totes les interfícies de xarxa, també us permet modificar els seus paràmetres.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>General</guilabel></term>
+	   <listitem>
+		<para>Us permet modificar el nom de l'ordinador central del vostre sistema i el nom del domini.</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Conté dues seccions, els <guilabel>Servidors DNS</guilabel> són el que utilitza el vostre ordinador per a resoldre les adreces IP dels noms de domini. Els <guilabel>Dominis de cerca</guilabel> són els dominis per defecte on el vostre sistema cercarà un ordinador central quan no s'especifiqui un domini.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Ordinadors centrals</guilabel></term>
+	   <listitem>
+		<para>Mostra la llista d'àlies per a accedir a altres ordinadors.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Utilització</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>Per a modificar els paràmetres d'una connexió</title>
+	 <para>En la secció <guilabel>Connexions</guilabel>, seleccioneu l'interfície que voleu modificar i premeu el botó <guilabel>Propietats</guilabel>. Depenent del tipus d'interfície podreu modificar diferents dades.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Interfícies Ethernet i IRLAN</term>
+		<listitem>
+		  <para>Podeu modificar la manera en què es configura la interfície (DHCP o manualment). Si la interfície es configura manualment, també podreu modificar l'adreça IP, la màscara de subxarxa i l'adreça de passarel·la de la interfície.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfícies sense fil</term>
+		<listitem>
+		  <para>Podeu modificar la manera en què es configura la interfície (DHCP o manualment). Si la interfície es configura manualment, també podreu modificar l'adreça IP, la màscara de subxarxa i l'adreça de passarel·la de la interfície, també podeu modificar el nom de la xarxa (ESSID) per a aquesta interfície.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfícies de port paral·lel</term>
+		<listitem>
+		  <para>Podeu modificar l'adreça IP de la interfície i també l'adreça IP remota.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Interfícies PPP/Mòdem</term>
+		<listitem>
+		  <para>Podeu modificar el dispositiu mòdem, si voleu marcar utilitzant tons o polsos, el volum del mòdem, el número de telèfon, el nom d'usuari i la contrasenya que us ha assignat el vostre ISP, i altres paràmetres avançats del PPP.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>Per a activar o desactivar una interfície</title>
+	 <para>En la secció <guilabel>Connexions</guilabel>, activeu o desactiveu la casella de selecció al costat de la interfície.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>Per a canviar el nom del vostre ordinador central i el nom del domini</title>
+	 <para>En la secció <guilabel>General</guilabel>, canvieu les caixes de text referents al nom de l'ordinador o al nom del domini.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a afegir un servidor de noms del domini nou</title>
+	 <para>En la secció <guilabel>Servidors DNS</guilabel>, premeu el botó <guilabel>Afegeix</guilabel> i ompliu la fila nova de la llista amb el servidor de noms del domini nou.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a suprimir un sistema d'anomenament de dominis</title>
+	 <para>En la secció <guilabel>Servidors DNS</guilabel>, seleccioneu l'adreça IP d'un DNS de la llista i premeu el botó <guilabel>Suprimeix</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a afegir un domini de cerca nou</title>
+	 <para>En la secció <guilabel>Dominis de cerca</guilabel>, premeu el botó <guilabel>Afegeix</guilabel> i ompliu la fila nova de la llista amb el domini de cerca nou.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a suprimir un domini de cerca</title>
+	 <para>En la secció <guilabel>Dominis de cerca</guilabel>, seleccioneu un domini de cerca de la llista i premeu el botó <guilabel>Suprimeix</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a afegir un àlies d'ordinador central nou</title>
+	 <para>En la secció <guilabel>Ordinadors centrals</guilabel>, premeu el botó <guilabel>Afegeix</guilabel> i introduïu l'adreça IP i els àlies qui hi apuntaran en la finestra emergent.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a modificar un àlies d'ordinador central</title>
+	 <para>En la secció <guilabel>Ordinadors centrals</guilabel>, seleccioneu un àlies de la llista, premeu el botó <guilabel>Propietats</guilabel> i modifiqueu els paràmetres dels àlies en la finestra emergent.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a suprimir un àlies d'ordinador central</title>
+	 <para>En la secció <guilabel>Ordinadors centrals</guilabel>, seleccioneu un àlies de la llista i premeu el botó <guilabel>Suprimeix</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>Per a desar la configuració actual de la xarxa com una «Ubicació»</title>
+	 <para>Premeu el botó <guilabel>Afegeix</guilabel> al costat del menú <guilabel>Ubicació</guilabel>, especifiqueu el nom de la ubicació en la finestra emergent.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a suprimir una ubicació</title>
+	 <para>Premeu el botó <guilabel>Suprimeix</guilabel> al costat del menú <guilabel>Ubicació</guilabel>, el perfil seleccionat serà suprimit.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a canviar a una ubicació</title>
+	 <para>Seleccioneu una ubicació del menú <guilabel>Ubicació</guilabel>. Tota la configuració canviarà automàticament a la ubicació triada.</para>
+    </sect2>
+  </sect1>
+</article>

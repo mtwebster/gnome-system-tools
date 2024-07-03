@@ -1,0 +1,14 @@
+Index: gnome-system-tools-2.32.0/src/time/tz-map.c
+===================================================================
+--- gnome-system-tools-2.32.0.orig/src/time/tz-map.c	2010-05-24 17:09:57.000000000 +0000
++++ gnome-system-tools-2.32.0/src/time/tz-map.c	2011-01-14 03:05:26.038764104 +0000
+@@ -416,7 +416,8 @@
+ 		        e_map_point_set_color_rgba (tzmap->map,
+ 						    tzmap->point_selected,
+ 						    TZ_MAP_POINT_NORMAL_RGBA);
+-		tzmap->point_selected = tzmap->point_hover;
++		tzmap->point_selected =
++			e_map_get_closest_point (tzmap->map, longitude, latitude, FALSE);
+ 
+ 		location_combo = gst_dialog_get_widget (tzmap->tool->main_dialog, "location_combo");
+ 		tz_location    = e_tz_map_location_from_point (tzmap, tzmap->point_selected);

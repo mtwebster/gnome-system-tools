@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="sv">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Handbok för Nätverksadministrationsverktyg</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2007</year><holder>Daniel Nylander (po@danielnylander.se)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller senare, utgivet av Free Software Foundation utan standardavsnitt och omslagstexter.  En kopia av GFDL finns att hämta på denna <ulink type="help" url="ghelp:fdl">länk</ulink> eller i filen COPYING-DOCS som medföljer denna handbok.</para>
+         <para>Denna handbok utgör en av flera GNOME-handböcker som distribueras under villkoren i GFDL.  Om du vill distribuera denna handbok separat från övriga handböcker kan du göra detta genom att lägga till en kopia av licensavtalet i handboken enligt instruktionerna i avsnitt 6 i licensavtalet.</para>
+
+	<para>Flera namn på produkter och tjänster är registrerade varumärken. I de fall dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med versaler eller med inledande versal.</para>
+
+	<para>DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <orderedlist>
+		<listitem>
+		  <para>DOKUMENTET TILLHANDAHÅLLS I "BEFINTLIGT SKICK" UTAN NÅGRA SOM HELST GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST UNDER DENNA ANSVARSFRISKRIVNING;</para>
+		</listitem>
+		<listitem>
+		  <para>UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA SKADOR.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Handbok för Nätverksadministrationsverktyg v2.15.2</revnumber>
+	   <date>Augusti 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Handbok för Nätverksadministrationsverktyg v0.35</revnumber>
+	   <date>Juni 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Denna handbok beskriver version 2.15.2 av Nätverksadministrationsverktyg.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Återkoppling</title> 
+	 <para>För att rapportera ett fel eller komma med förslag angående Nätverksadministrationsverktyget eller denna handbok, följ anvisningarna på <ulink url="ghelp:gnome-feedback" type="help">GNOME:s återkopplingssida</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Nätverksadministrationsverktyget låter dig ange sättet som ditt system ansluter till andra datorer och till Internet.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Nätverksadministrationsverktyg</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introduktion</title> 
+    <para><application>Nätverksadministrationsverktyget</application> låter dig ange sättet som ditt system ansluter till andra datorer och till Internet.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Komma igång</title>
+
+    <para>Du kan starta <application>Nätverksadministrationsverktyg</application> på följande sätt:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menyn <guimenu>System</guimenu></term>
+	   <listitem>
+		<para>Välj <menuchoice><guisubmenu>Administration</guisubmenu><guimenuitem>Nätverk</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Kommandorad</term>
+	   <listitem>
+		<para>Kör följande kommando: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>När du startar <application>Nätverksadministrationsverktyg</application> kommer du att bli tillfrågad om att ange administratörslösenordet, det här är nödvändigt eftersom ändringar som görs med det här verktyget kommer att påverka hela systemet.</para>
+
+    <para>Följande fönster visas efter att administratörslösenordet har matats in.</para>
+
+    <figure id="network-main-window">
+	 <title>Huvudfönstret i Nätverksadministrationsverktyg</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Visar huvudfönstret i Nätverksadministrationsverktyget.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Huvudfönstret i <application>Nätverksadministrationsverktyg</application> innehåller fyra flikade sektioner:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Anslutningar</guilabel></term>
+	   <listitem>
+		<para>Visar alla nätverksgränssnitt, den låter dig även ändra deras inställningar.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>Allmänt</guilabel></term>
+	   <listitem>
+		<para>Tillåter att du ändrar ditt systems värdnamn och domännamn.</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Innehåller två sektioner, <guilabel>DNS-servrar</guilabel> är vad din dator använder för att slå upp IP-adresserna från domännamnen. <guilabel>Sökdomäner</guilabel> är standarddomäner i vilka ditt system kommer att söka efter värdar när ingen domän har angivits.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Värdar</guilabel></term>
+	   <listitem>
+		<para>Visar listan över alias för att komma åt andra datorer.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Användning</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>Ändra anslutningsinställningar</title>
+	 <para>I sektionen <guilabel>Anslutningar</guilabel>, välj gränssnittet som du vill ändra och tryck på knappen <guilabel>Egenskaper</guilabel>, beroende på gränssnittets typ kommer du kunna ändra olika data.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Ethernet och IRLAN-gränssnitt</term>
+		<listitem>
+		  <para>Du kan ändra sättet som gränssnittet är konfigurerat på (DHCP eller manuellt), om gränssnittet är konfigurerat manuellt kan du även ändra gränssnittets IP-adress, nätmask och gateway.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Trådlösa gränssnitt</term>
+		<listitem>
+		  <para>Du kan ändra sättet som gränssnittet konfigureras på (DHCP eller manuellt), om gränssnittet konfigureras manuellt kan du även ändra gränssnittets IP-adress, nätmask och gateway, du kan även ändra nätverksnamnet (ESSID) för det här gränssnittet.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Parallel line-gränssnitt</term>
+		<listitem>
+		  <para>Du kan ändra gränssnittets IP-adress såväl som fjärr-IP-adressen.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>PPP/Modem-gränssnitt</term>
+		<listitem>
+		  <para>Du kan ändra modemenheten, huruvida du vill att den ska ringa med toner eller pulser, modemvolymen, telefonnumret, användarnamn och lösenord som din Internetleverantör har gett dig och andra avancerade inställningar för PPP.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>Aktivera eller inaktivera ett gränssnitt</title>
+	 <para>I sektionen <guilabel>Anslutningar</guilabel>, aktivera eller inaktivera kryssrutan bredvid gränssnittet.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>Ändra ditt värdnamn och domännamn</title>
+	 <para>I sektionen <guilabel>Allmänt</guilabel>, ändra värdnamnet eller domännamnet i textfälten.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Lägg till en ny domännamnsserver</title>
+	 <para>I sektionen <guilabel>DNS-servrar</guilabel>, tryck på knappen <guilabel>Lägg till</guilabel> och fyll i den nya listan med nya domännamnsservrar.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Ta bort en domännamnsserver</title>
+	 <para>I sektionen <guilabel>DNS-servrar</guilabel>, välj en DNS IP-adress från listan och tryck på knappen <guilabel>Ta bort</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Lägg till en ny sökdomän</title>
+	 <para>I sektionen <guilabel>Sökdomäner</guilabel>, tryck på knappen <guilabel>Lägg till</guilabel> och fyll i den nya listan med nya sökdomäner.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Ta bort en sökdomän</title>
+	 <para>I sektionen <guilabel>Sökdomäner</guilabel>, välj en sökdomän från listan och tryck på knappen <guilabel>Ta bort</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Lägg till ett nytt värdalias</title>
+	 <para>I sektionen <guilabel>Värdar</guilabel>, tryck på knappen <guilabel>Lägg till</guilabel> och skriv in en IP-adress och det alias som det ska pekas till i fönstret som visas.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Ändra ett värdalias</title>
+	 <para>I sektionen <guilabel>Värdar</guilabel>, välj ett alias och tryck på knappen <guilabel>Egenskaper</guilabel> från listan och ändra aliasinställningarna i fönstret som visas.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Ta bort ett värdalias</title>
+	 <para>I sektionen <guilabel>Värdar</guilabel>, välj ett alias från listan och tryck på knappen <guilabel>Ta bort</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>Spara din aktuella nätverkskonfiguration som en "Plats"</title>
+	 <para>Tryck på knappen <guilabel>Lägg till</guilabel> bredvid menyn <guilabel>Platser</guilabel>, ange platsens namn i fönstret som kommer att visas.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Ta bort en plats</title>
+	 <para>Tryck på knappen <guilabel>Ta bort</guilabel> bredvid menyn <guilabel>Platser</guilabel>, den valda profilen kommer att tas bort.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Växla till en plats</title>
+	 <para>Välj en plats från menyn <guilabel>Platser</guilabel>, all konfiguration kommer att växlas automatiskt till den valda platsen.</para>
+    </sect2>
+  </sect1>
+</article>

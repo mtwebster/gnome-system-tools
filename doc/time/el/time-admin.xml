@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Time Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="el">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Εγχειρίδιο για το εργαλείο διαχείρισης ώρας</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2009</year><holder>Michael Kotsarinis</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Χορηγείται η άδεια για αντιγραφή, διανομή ή/και τροποποίηση αυτού του εγγράφου κάτω από τους όρους του GNU·Free·Documentation·License·(GFDL) έκδοσης 1.1 ή οποιαδήποτε άλλης έκδοσης δημοσιευμένης από το Free·Software·Foundation με αναλλοίωτα στοιχεία, χωρίς κείμενα Front-Cover και κείμενα Back-Cover. Μπορείτε να βρείτε ένα αντίγραφο του GFDL σε αυτόν το <ulink type="help" url="ghelp:fdl">σύνδεσμο</ulink> ή στο αρχείο COPYING-DOCS που διανέμεται με αυτόν τον οδηγό.</para>
+         <para>Το εγχειρίδιο αυτό είναι τμήμα της συλλογής εγχειριδίων GNOME που διανέμεται υπό την άδεια GFDL. Αν επιθυμείτε να διανείμετε το παρόν εγχειρίδιο χωριστά από την συλλογή, μπορείτε να το κάνετε προσθέτοντας ένα αντίγραφο της άδειας στο εγχειρίδιο, όπως περιγράφεται στο τμήμα 6 της άδειας.</para>
+
+	<para>Πολλά ονόματα που χρησιμοποιούν οι εταιρίες για να διακρίνουν μεταξύ τους προϊόντα και υπηρεσίες διεκδικούνται ως εμπορικά σήματα. Όπου τα ονόματα αυτά εμφανίζονται σε οποιαδήποτε τεκμηρίωση GNOME, και τα μέλη του Σχεδίου Τεκμηρίωσης GNOME είναι ενήμερα αυτών των εμπορικών σημάτων, τότε τα ονόματά τους εμφανίζονται με κεφαλαία γράμματα ή με τα αρχικά κεφαλαία γράμματα.</para>
+
+	<para>ΤΟ ΕΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΤΟΥ ΕΓΓΡΑΦΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΕΛΕΥΘΕΡΗΣ ΑΔΕΙΑΣ ΤΕΚΜΗΡΙΩΣΗΣ GNU ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ ΚΑΤΑΝΟΗΣΗ ΟΤΙ: <orderedlist>
+		<listitem>
+		  <para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ "ΩΣ ΕΧΕΙ", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΕΓΓΥΗΣΗ, ΕΚΠΕΦΡΑΣΜΕΝΗ Ή ΥΠΑΙΝΙΣΣΟΜΕΝΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟΥΣ, ΕΓΓΥΗΣΕΩΝ ΟΤΙ ΤΟ ΕΓΓΡΑΦΟ Ή Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΤΟΥ ΕΙΝΑΙ ΑΠΑΛΑΓΜΕΝΟ ΑΤΕΛΕΙΩΝ, ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΗ ΧΡΗΣΗ Ή ΑΠΑΡΑΒΙΑΣΤΟ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΚΑΘΕ ΚΙΝΔΥΝΟ ΠΟΥ ΜΠΟΡΕΙ ΝΑ ΠΡΟΚΥΨΕΙ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΑΚΡΙΒΕΙΑ ΚΑΙ ΛΕΙΤΟΥΡΓΙΑ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΤΟΥ. ΑΝ ΟΠΟΙΟΔΗΠΟΤΕ ΕΓΓΡΑΦΟ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΤΟΥ ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΛΑΤΩΜΑΤΙΚΑ ΜΕ ΟΠΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΤΕΛΙΚΟΣ ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΣΥΝΤΑΚΤΗΣ Ή ΟΠΟΙΟΣΔΗΠΟΤΕ ΤΟ ΔΙΕΝΗΜΕ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΕΠΙΣΚΕΥΗΣ Ή ΔΙΟΡΘΩΣΗΣ. ΑΥΤΗ Η ΠΑΡΑΙΤΗΣΗ ΑΠΟ ΕΓΓΥΗΤΙΚΕΣ ΕΥΘΥΝΕΣ ΣΥΝΙΣΤΑ ΟΥΣΙΑΣΤΙΚΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. ΟΥΔΕΜΙΑ ΧΡΗΣΗ ΟΙΟΥΔΗΠΟΤΕ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΟΥ ΕΓΓΡΑΦΟΥ ΕΞΟΥΣΙΟΔΟΤΕΙΤΑΙ ΕΦΕΞΗΣ, ΠΑΡΑ ΥΠΟ ΤΟΝ ΟΡΟ ΤΗΣ ΩΣ ΑΝΩ ΠΑΡΑΙΤΗΣΗΣ ΚΑΙ</para>
+		</listitem>
+		<listitem>
+		  <para>ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΣΕ ΚΑΜΙΑ ΝΟΜΟΛΟΓΙΑ ΑΣΤΙΚΟΥ ΑΔΙΚΗΜΑΤΟΣ (ΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΕΚΕΙΝΟΥ ΤΗΣ ΑΜΕΛΕΙΑΣ), ΣΥΜΒΟΛΑΙΟΥ Ή ΑΛΛΟΥ, Ο ΣΥΝΤΑΚΤΗΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΠΟΙΟΣΔΗΠΟΤΕ ΣΥΝΕΡΓΑΤΗΣ Ή ΟΠΟΙΟΣΔΗΠΟΤΕ ΔΙΑΝΟΜΕΑΣ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΤΟΥ ΕΓΓΡΑΦΟΥ, Ή ΟΠΟΙΣΔΗΠΟΤΕ ΠΡΟΜΗΘΕΥΤΗΣ ΟΠΟΙΟΥΔΗΠΟΤΕ ΕΚ ΤΩΝ ΑΝΩΤΕΡΩ ΠΡΟΣΩΠΩΝ ΕΙΝΑΙ ΥΠΕΥΘΥΝΟΣ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ ΠΡΟΣΩΠΟΥ ΓΙΑ ΟΠΟΙΑΔΗΠΟΤΕ ΑΜΕΣΗ, ΕΜΜΕΣΗ, ΙΔΙΑΙΤΗΕΡΗ, ΑΤΥΧΗ Ή ΣΥΝΕΠΑΓΟΜΕΝΗ ΒΛΑΒΗ ΟΙΟΥΔΗΠΟΤΕ ΧΑΡΑΚΤΗΡΑ ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟΥΣ, ΒΛΑΒΕΣ ΕΞΑΙΤΙΑΣ ΑΠΩΛΕΙΑΣ ΠΕΛΑΤΕΙΑΣ, ΣΤΑΣΗ ΕΡΓΑΣΙΑΣ, ΑΣΤΟΧΙΑ Ή ΚΑΚΗ ΛΕΙΤΟΥΡΓΙΑ ΥΠΟΛΟΓΙΣΤΗ, Ή ΟΠΟΙΑΔΗΠΟΤΕ ΚΑΙ ΚΑΘΕ ΑΛΛΗ ΒΛΑΒΗ Ή ΑΠΩΛΕΙΑ ΠΟΥ ΘΑ ΕΓΕΙΡΕΙ Ή ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΟΠΟΙΑΣΔΗΠΟΤΕ ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΤΟΥ ΕΓΓΡΑΦΟΥ, ΑΚΟΜΗ ΚΑΙ ΑΝ ΚΑΠΟΙΟ ΑΠΟ ΑΥΤΑ ΤΑ ΠΡΟΣΩΠΑ ΕΙΝΑΙ ΕΝΗΜΕΡΟ ΓΙΑ ΤΗΝ ΠΙΘΑΝΟΤΗΤΑ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΒΛΑΒΩΝ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Time Administration Tool Manual V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Time Administration Tool Manual V0.35</revnumber>
+	   <date>June 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Αυτό το εγχειρίδιο περιγράφει την έκδοση 2.15.2 του εργαλείου διαχείρισης ώρας.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Ανάδραση</title> 
+	 <para>Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με το εργαελίο διαχείρισης ώρας ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στο <ulink url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Το εργαλείο διαχείρισης ώρας σας επιτρέπει να ορίσετε την ώρα, ημερομηνία και ζώνη ώρας του συστήματός σας, καθώς και τη ρύθμισης οποιουδήποτε εξυπηρετητή χρόνου για να συγχρονίσετε το τοπικό σας εξυπηρετητή χρόνου.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Εργαλείο διαχείρισης ώρας</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Εισαγωγή</title> 
+    <para>Το <application>εργαλείο διαχείρισης ώρας</application> σας επιτρέπει να ορίσετε την ώρα, την ημερομηνία και τη ζώνη ώρας του συστήματός σας, καθώς και να ρυθμίσετε οποιδήποτε εξυπηρετητή χρόνου για να συγχρονίσετε τον τοπικό σας εξυπηρετητή χρόνου.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Ξεκινώντας</title>
+
+    <para>Μπορείτε να εκκινήσετε την εφαρμογή <application>εργαλείο διαχείρισης ώρας</application> με τους ακόλουθους τρόπους:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Μενού <guimenu>Σύστημα</guimenu></term>
+	   <listitem>
+		<para>Επιλέξτε <menuchoice><guisubmenu>Διαχείριση</guisubmenu><guimenuitem>Ώρα και ημερομηνία</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Μενού περιεχομένου στη μικροεφαρμογή ρολογιού</term>
+	   <listitem>
+		<para>Επιλέξτε <menuchoice><guisubmenu>Ρύθμιση ώρας και ημερομηνίας</guisubmenu></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Γραμμή εντολών</term>
+	   <listitem>
+		<para>Εκτελέστε την ακόλουθη εντολή: <command>time-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Όταν εκκινείτε το <application>εργαλείο διαχείρισης ώρας</application>, μπορεί να σας ζητηθεί ο κωδικός πρόσβασης διαχειριστή. Αυτό είναι απαραίτητο διότι οι αλλαγές που γίνονται με αυτό το εργαλείο θα επηρεάσουν όλο το σύστημα.</para>
+
+    <para>Αφού εισάγετε τον κωδικό σας, εμφανίζεται το παράθυρο διαμόρφωσης ώρας.</para>
+
+    <figure id="time-main-window-automatic">
+	 <title>Κεντρικό παράθυρο εργαλείου διαχείρισης ώρας, κατάσταση αυτόματης διαμόρφωσης</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/time-tool-automatic.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Κεντρικό παράθυρο εργαλείου διαχείρισης ώρας σε κατάσταση αυτόματης διαμόρφωσης.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <figure id="time-main-window-manual">
+	 <title>Κεντρικό παράθυρο εργαλείου διαχείρισης ώρας, κατάσταση χειροκίνητης διαμόρφωσης</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/time-tool-manual.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Κεντρικό παράθυρο εργαλείου διαχείρισης ώρας σε κατάσταση χειροκίνητης διαμόρφωσης.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Το κεντρικό παράθυρο του <application>εργαλείου διαχείρισης ώρας</application> περιέχει τα ακόλουθα στοιχεία:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Ζώνη ώρας</term>
+	   <listitem>
+		<para>Εμφανίζει την τρέχουσα ζώνη ώρας, το κουμπί εμφανίζει ένα χάρτη για την επιλογή ζώνης ώρας.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Τύπος διαμόρφωσης</term>
+	   <listitem>
+	     <para>Μπορεί να είναι:</para>
+	     <variablelist>
+	       <varlistentry>
+	         <term><guilabel>Συγχρονισμός με εξυπηρετητές του διαδικτύου</guilabel></term>
+		 <listitem>
+		   <para>Θα μπορείτε να επιλέξετε από μια λίστα εξυπηρετητών στο διαδίκτυο για να συγχρονίζεται αυτόματα το ρολόι του υπολογιστή σας.</para>
+		 </listitem>
+	       </varlistentry>
+	       <varlistentry>
+	         <term><guilabel>Χειροκίνητη</guilabel></term>
+		 <listitem>
+		   <para>Θα μπορείτε να διαμορφώσετε πλήρως την ώρα και την ημερομηνία με το χέρι.</para>
+		 </listitem>
+	       </varlistentry>
+	     </variablelist>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Κουμπί <guilabel>Συγχρονισμός τώρα</guilabel></term>
+	   <listitem>
+		<para>Σας επιτρέπει να συγχορνιστείτε μία φορά με τους επιλεγμένους εξυπηρετητές στο διαδίκτυο.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Χρήση</title>
+
+    <sect2>
+	 <title>Αλλαγή ώρας ή ημερομηνίας</title>
+	 <para>Απλώς αλλάξτε τα πεδία τιμών ώρας ή ημερομηνίας στο ημερολόγιο.</para>
+    </sect2>
+
+    <sect2 id="tool-time-zone">
+	 <title>Αλλαγή ζώνης ώρας</title>
+	 <para>Κάντε κλικ στο <guilabel>Επιλογή ζώνης ώρας</guilabel> και πειλέξτε τη νέα τοποθεσία, εναλλακτικά μπορείτε επίσης να επιλέξετε τη νέα τοποθεσία από την παρακάτω λίστα.</para>
+
+	 <figure id="time-map-window">
+	   <title>Χάρτης εργαλείου διαχείρισης ώρας</title>
+	   <screenshot>
+		<mediaobject>
+		  <imageobject>
+		    <imagedata fileref="figures/time-map.png" format="PNG"/>
+		  </imageobject>
+		  <textobject>
+		    <phrase>Εμφανίζει το παράθυρο του χάρτη του εργαλείου διαχείρισης ώρας.</phrase>
+		  </textobject>
+		</mediaobject>
+	   </screenshot>
+	 </figure>
+    </sect2>
+
+    <sect2 id="tool-time-servers">
+	 <title>Για να συγχρονίσετε τον τοπικό σας εξυπηρετητή με εξυπηρετητές χρόνου στο διαδίκτυο</title>
+	 <para>Αν το κουτάκι δεν είναι επιλεγμένο, επιλέξτε το, κάντε κλικ στο <guilabel>Επιλογή εξυπηρετητών</guilabel> και επιλέξτε ένα νέο εξυπηρετητή από τη λίστα.</para>
+
+	 <figure id="time-servers-window">
+	   <title>Παράθυρο εξυπηρετητών του εργαλείου διαχείρισης ώρας</title>
+	   <screenshot>
+		<mediaobject>
+		  <imageobject>
+		    <imagedata fileref="figures/time-servers.png" format="PNG"/>
+		  </imageobject>
+		  <textobject>
+		    <phrase>Εμφανίζει το παράθυρο εξυπηρετητών του εργαλείου διαχείρισης ώρας.</phrase>
+		  </textobject>
+		</mediaobject>
+	   </screenshot>
+	 </figure>
+    </sect2>
+  </sect1>
+</article>

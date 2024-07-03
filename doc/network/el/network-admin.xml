@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="el">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Εγχειρίδιο του εργαλείου διαχείρισης δικτύου</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2009</year><holder>Μιχάλης Κοτσαρίνης (mk73628@hotmail.com)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής της από το Ίδρυμα Ελεύθερου Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξώφυλλου και κείμενα οπισθόφυλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink type="help" url="ghelp:fdl">σύνδεσμο</ulink>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με το παρόν εγχειρίδιο.</para>
+         <para>Αυτό το εγχειρίδιο αποτελεί μέρος της συλλογής εγχειριδίων του GNOME που διανέμονται υπό τους όρους της GFDL. Αν επιθυμείτε να διανείμετε το παρόν εγχειρίδιο ξεχωριστά από τη συλλογή, οφείλετε να προσθέσετε στο εγχειρίδιο αντίγραφο της άδειας χρήσης, όπως περιγράφεται στο άρθρο 6 της άδειας. </para>
+
+	<para>Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για τη διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως εμπορικά σήματα. Οπουδήποτε στην τεκμηρίωση του GNOME εμφανίζονται αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης του GNOME έχουν λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες αυτές θα γράφονται με κεφαλαίους χαρακτήρες ή με κεφαλαίους τους αρχικούς χαρακτήρες.</para>
+
+	<para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΑΥΤΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΕΛΕΥΘΕΡΗΣ ΑΔΕΙΑΣ ΤΕΚΜΗΡΙΩΣΗΣ GNU (GFDL) ΚΑΙ ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ ΔΙΕΥΚΡΙΝΙΣΗ ΟΤΙ: <orderedlist>
+		<listitem>
+		  <para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ "ΩΣ ΕΧΕΙ", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΗ ΕΓΓΥΗΣΗ, ΕΙΤΕ ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΝΑ ΠΕΡΙΟΡΙΖΕΤΑΙ ΣΕ ΑΥΤΗ, ΤΗΣ ΕΓΓΥΗΣΗΣ ΟΤΙ ΤΟ ΕΓΓΡΑΦΟ, Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΜΗ ΕΛΑΤΤΩΜΑΤΙΚΟ, ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ, Η ΕΛΕΥΘΕΡΟ ΠΑΡΑΒΑΣΕΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΥΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΑΠΟΤΕΛΕΣΜΑΤΙΚΟΤΗΤΑ ΤΟΥ ΕΓΓΡΑΦΟΥ, Η ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΕΝΑ ΕΓΓΡΑΦΟ, Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, Ο ΔΗΜΙΟΥΡΓΟΣ Η ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ 'Η ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. Η ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ, Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΕΠΙΤΡΕΠΕΤΑΙ ΜΟΝΟ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΠΑΡΟΥΣΑΣ ΑΠΟΠΟΙΗΣΗΣ ΕΓΓΥΗΣΗΣ. ΕΠΙΣΗΣ,</para>
+		</listitem>
+		<listitem>
+		  <para>Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ ΚΑΙ ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ ΕΓΓΡΑΦΟΥ Η ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ ΤΩΝ ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΝΟΜΙΚΗ ΕΡΜΗΝΕΙΑ ΤΟΥ ΑΣΤΙΚΟΥ (ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ), ΤΟΥ ΕΝΟΧΙΚΟΥ Η ΑΛΛΟΥ ΔΙΚΑΙΟΥ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ Η ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΝΑ ΠΕΡΙΟΡΙΖΟΝΤΑΙ ΣΕ ΑΥΤΕΣ, ΖΗΜΙΩΝ ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΕΙΑΣ Η ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Η ΚΑΘΕ ΑΛΛΗΣ ΖΗΜΙΑΣ Η ΑΠΩΛΕΙΑΣ ΠΟΥ ΟΦΕΙΛΕΤΑΙ ΣΕ Η ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ ΓΝΩΣΗ ΤΗΣ ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Network Administration Tool Manual V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Network Administration Tool Manual V0.35</revnumber>
+	   <date>June 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>This manual describes version 2.15.2 of Network Administration Tool.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Ανάδραση</title> 
+	 <para>Για να αναφέρετε ένα πρόβλημα ή να κάνετε μια πρόταση σχετικά το Εργαλείο Διαχείρισης Δικτύου ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στο <ulink url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>. </para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Το Εργαλείο διαχείρισης δικτύου σας επιτρέπει να καθορίσετε τον τρόπο με τον οποίο το σύστημά σας συνδέεται με άλλους υπολογιστές και με το διαδίκτυο.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Εργαλείο διαχείρισης δικτύου</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Εισαγωγή</title> 
+    <para>Το <application>Εργαλείο διαχείρισης δικτύου</application> σας επιτρέπει να καθορίσετε τον τρόπο με τον οποίο το σύστημά σας συνδέεται με άλλους υπολογιστές και με το διαδίκτυο.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Ξεκινώντας</title>
+
+    <para>Μπορείτε να εκκινήσετε το <application>Εργαλείο διαχείρισης δικτύου</application> με τους ακόλουθους τρόπους:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Μενού <guimenu>Σύστημα</guimenu></term>
+	   <listitem>
+		<para>Επιλέξτε <menuchoice><guisubmenu>Διαχείριση</guisubmenu><guimenuitem>Δικτύωση</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Γραμμή εντολών</term>
+	   <listitem>
+		<para>Εκτελέστε την ακόλουθη εντολή: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Όταν ξεκινήσετε το <application>Εργαλείο διαχείρισης δικτύου</application>, θα σας ζητηθεί ο κωδικός διαχειριστή, αυτό είναι απαραίτητο διότι οι αλλαγές που γίνονται με αυτό το εργαλείο επηρεάζουν όλο το σύστημα.</para>
+
+    <para>Αφού εισάγετε τον κωδικό διαχειριστή, εμφανίζεται το ακόλουθο παράθυρο.</para>
+
+    <figure id="network-main-window">
+	 <title>Κεντρικό παράθυρο του Εργαλείου διαχείρισης δικτύου</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Εμφανίζει το κεντρικό παράθυρο του Εργαλείου διαχείρισης δικτύου.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Το κεντρικό παράθυρο του <application>Εργαλείου διαχείρισης δικτύου</application> έχει τέσσερις ενότητες σε καρτέλες:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Συνδέσεις</guilabel></term>
+	   <listitem>
+		<para>Εμφανίζει όλες τις συνδέσεις δικτύου και σας επιτρέπει να τροποποιήσετε τις ρυθμίσεις τους.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>Γενικά</guilabel></term>
+	   <listitem>
+		<para>Έπιτρέπει να τροποποιήσετε τα ονόματα συστήματος (host) και τομέα (domain).</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Περιέχει δύο ενότητες, οι <guilabel>Εξυπηρετητές DNS</guilabel> είναι αυτοί που χρησιμοποιεί ο υπολογιστής σας για να επιλύσει τις διευθύνσεις IP από τα ονόματα τομέων. Η <guilabel>Αναζήτηση τομέων</guilabel> είναι οι προεπιλεγμένοι τομείς στους οποίους το σύστημά σας θα αναζητήσει οποιονδήποτε host όταν δεν καθορίζεται τομέας.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Συστήματα</guilabel></term>
+	   <listitem>
+		<para>Εμφανίζει τη λίστα των αντωνύμων (aliases) για την πρόσβαση σε άλλους υπολογιστές.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Χρήση</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>Τροποποίηση ρυθμίσεων σύνδεσης</title>
+	 <para>Στην ενότητα <guilabel>Συνδέσεις</guilabel>, επιλέξτε τη διεπαφή που θέλετε να τροποποιήσετε και πατήστε το κουμπί <guilabel>Ιδιότητες</guilabel>. Ανάλογα με τον τύπο της διεπαφής θα μπορείτε να τροποποιήσετε διαφορετικά δεδομένα.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Συνδέσεις Ethernet και IRLAN</term>
+		<listitem>
+		  <para>Μπορείτε να τροποποιήσετε τον τρόπο διαμόρφωσης της διεπαφής (DHCP ή χειροκίνητα). Αν η διεπαφή διαμορφωθεί χειροκίνητα, μπορείτε επίσης να τροποποιήσετε τη διέυθυνση IP, τη μάσκα υποδικτύου και τη διεύθυνση μετάδοσης.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Ασύρματες διεπαφές</term>
+		<listitem>
+		  <para>Μπορείτε να τροποποιήσετε τον τρόπο διαμόρφωσης της διεπαφής (DHCP ή χειροκίνητα). Αν η διεπαφή διαμορφωθεί χειροκίνητα, μπορείτε επίσης να τροποποιήσετε τη διέυθυνση IP, τη μάσκα υποδικτύου και τη διεύθυνση μετάδοσης. Ακόμα, μπορείτε να τροποποιήσετε το όνομα δικτύου (ESSID) για αυτή τη διεπαφή.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Διεπαφές παράλληλης σύνδεσης</term>
+		<listitem>
+		  <para>Μπορείτε να τροποποιήσετε τη διεύθυνση IP καθώς και την απομακρυσμένη διεύθυνση IP.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Διεπαφές PPP/Modem</term>
+		<listitem>
+		  <para>Μπορείτε να τροποποιήσετε τη συσκευή μόντεμ, ανάλογα αν θέλετε να καλεί χρησιμοποιώντας τόνους ή παλμούς, την ένταση ήχου του μόντεμ, τον αριθμό τηλεφώνου, το όνομα χρήστη και τον κωδικό πρόσβασης, που σας έχει δώσει ο πάροχός σας (ISP) και άλλες προχωρημένες ρυθμίσεις για το PPP.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>Ενεργοποίησή ή απενεργοποίηση μιας διεπαφής</title>
+	 <para>Στην ενότητα <guilabel>Συνδέσεις</guilabel>, ενεργοποιήστε ή απενεργοποιήστε το κουτάκι δίπλα από τη διεπαφή.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>Αλλαγή ονόματος συστήματος και τομέα</title>
+	 <para>Στην ενότητα <guilabel>Γενικά</guilabel>, αλλάξτε τα πεδία κειμένου για το όνομα του συστήματος (host) ή το όνομα του τομέα (domain name).</para>
+    </sect2>
+
+    <sect2>
+	 <title>Προσθήκη εξυπηρετητή ονομάτων τομέα (domain name server)</title>
+	 <para>Στην ενότητα <guilabel>Εξυπηρετητές DNS</guilabel>, πατήστε το κουμπί <guilabel>Προσθήκη</guilabel> και συμπληρώστε τη νέα σειρά με το όνομα του νέου εξυπηρετητή.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Διαγραφή εξυπηρετητή ονομάτων τομέα</title>
+	 <para>Στην ενότητα <guilabel>Εξυπηρετητές DNS</guilabel>, επιλέξτε μια διεύθυνση IP ενός DNS από τη λίστα και πατήστε το κουμπί <guilabel>Διαγραφή</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Προσθήκη νέου τομέα αναζήτησης</title>
+	 <para>Στην ενότητα <guilabel>Αναζήτηση τομέων</guilabel>, πατήστε το κουμπί <guilabel>Προσθήκη</guilabel> και συμπληρώστε τη νέα σειρά με το νέο τομέα αναζήτησης.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Διαγραφή τομέα αναζήτησης</title>
+	 <para>Στην ενότητα <guilabel>Αναζήτηση τομέων</guilabel>, επιλέξτε ένα τομέα αναζήτησης από τη λίστα και πατήστε το κουμπί <guilabel>Διαγραφή</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Προσθήκη νέου αντώνυμου για το σύστημα (host alias)</title>
+	 <para>Στην ενότητα <guilabel>Συστήματα</guilabel>, πατήστε το κουμπί <guilabel>Προσθήκη</guilabel> και πληκτρολογήστε στο παράθυρο που ανοίγει, μια διεύθυνση IP και τα αντώνυμα που παραπέμπουν σε αυτή.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Τροποποίηση αντώνυμου συστήματος (host alias)</title>
+	 <para>Στην ενότητα <guilabel>Συστήματα</guilabel>, επιλέξτε ένα αντώνυμο, πατήστε το κουμπί <guilabel>Ιδιότητες</guilabel> και τροποποιήστε στο παράθυρο που ανοίγει, τις ρυθμίσεις.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Διαγραφή αντώνυμου συστήματος (host alias)</title>
+	 <para>Στην ενότητα <guilabel>Hosts</guilabel>, επιλέξτε ένα αντώνυμο από τη λίστα και πατήστε το κουμπί <guilabel>Διαγραφή</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>Αποθήκευση της τρέχουσας διαμόρφωσης του δικτύου ως "Τοποθεσία"</title>
+	 <para>Πατήστε το κουμπί <guilabel>Προσθήκη</guilabel> δίπλα στο μενού <guilabel>Τοποθεσίες</guilabel> και ορίστε το όνομα της τοποθεσίας στο παράθυρο που ανοίγει.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Διαγραφή τοποθεσίας</title>
+	 <para>Πατήστε το κουμπί <guilabel>Αφαίρεση</guilabel> δίπλα στο μενού <guilabel>Τοποθεσίες</guilabel>. Το επιλεγμένο προφίλ θα διαγραφεί.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Μετάβαση σε μια τοποθεσία</title>
+	 <para>Επιλέξτε μία τοποθεσία από το μενού <guilabel>Τοποθεσίες</guilabel>, όλη η διαμόρφωση θα μεταφερθεί αυτόματα στην επιλεγμένη τοποθεσία.</para>
+    </sect2>
+  </sect1>
+</article>

@@ -1,0 +1,28 @@
+---
+ src/users/user-profiles.conf.in | 2 +-
+ src/users/user-settings.h       | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/users/user-profiles.conf.in b/src/users/user-profiles.conf.in
+index 368c272..124854c 100644
+--- a/src/users/user-profiles.conf.in
++++ b/src/users/user-profiles.conf.in
+@@ -7,4 +7,4 @@ Groups=cdrom,floppy,dialout,tape,dip,adm,plugdev,fax,fuse,video
+ [Administrator]
+ _Name=Administrator
+ _Description=Can change anything on the system, including installing and upgrading software.
+-Groups=cdrom,floppy,dialout,tape,dip,adm,plugdev,fax,fuse,admin,sambashare,lpadmin,video
++Groups=cdrom,floppy,dialout,tape,dip,adm,plugdev,fax,fuse,sudo,sambashare,lpadmin,video
+diff --git a/src/users/user-settings.h b/src/users/user-settings.h
+index 1ba8fb3..0ae1364 100644
+--- a/src/users/user-settings.h
++++ b/src/users/user-settings.h
+@@ -29,7 +29,7 @@
+ #include "users-tool.h"
+ #include "user-profiles.h"
+ 
+-#define ADMIN_GROUP "admin"
++#define ADMIN_GROUP "sudo"
+ 
+ 
+ gboolean        user_delete                      (GtkTreeModel *model,

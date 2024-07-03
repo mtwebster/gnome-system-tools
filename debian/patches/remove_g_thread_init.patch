@@ -1,0 +1,29 @@
+---
+ src/network/main.c | 1 -
+ src/shares/main.c  | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/src/network/main.c b/src/network/main.c
+index bc87a73..cba15b5 100644
+--- a/src/network/main.c
++++ b/src/network/main.c
+@@ -88,7 +88,6 @@ set_text_buffers_callback (void)
+ int
+ main (int argc, gchar *argv[])
+ {
+-  g_thread_init (NULL);
+   gst_init_tool ("network-admin", argc, argv, NULL);
+   tool = gst_network_tool_new ();
+ 
+diff --git a/src/shares/main.c b/src/shares/main.c
+index f859ecc..beee15a 100644
+--- a/src/shares/main.c
++++ b/src/shares/main.c
+@@ -104,7 +104,6 @@ main (int argc, char *argv[])
+ 		{ NULL }
+ 	};
+ 
+-	g_thread_init (NULL);
+ 	gst_init_tool ("shares-admin", argc, argv, entries);
+ 	tool = GST_TOOL (gst_shares_tool_new ());
+ 

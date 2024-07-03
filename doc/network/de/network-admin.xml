@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Network Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="de">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Netzwerk-Verwaltungswerkzeug</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2008</year><holder>Mario Blättermann (mario.blaettermann@t-online.de)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem <ulink type="help" url="ghelp:fdl">Link</ulink> oder in der mit diesem Handbuch gelieferten Datei COPYING-DOCS.</para>
+         <para>Dieses Handbuch ist Teil einer Sammlung von GNOME-Handbüchern, die unter der GFDL veröffentlicht werden. Wenn Sie dieses Handbuch getrennt von der Sammlung weiterverbreiten möchten, können Sie das tun, indem Sie eine Kopie der Lizenz zum Handbuch hinzufügen, wie es in Abschnitt 6 der Lizenz beschrieben ist.</para>
+
+	<para>Viele der Namen, die von Unternehmen verwendet werden, um ihre Produkte und Dienstleistungen von anderen zu unterscheiden, sind eingetragene Warenzeichen. An den Stellen, an denen diese Namen in einer GNOME-Dokumentation erscheinen, werden die Namen in Großbuchstaben oder mit einem großen Anfangsbuchstaben geschrieben, wenn das GNOME-Dokumentationsprojekt auf diese Warenzeichen hingewiesen wird.</para>
+
+	<para>DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT DEM WEITERGEHENDEN VERSTÄNDNIS, DASS: <orderedlist>
+		<listitem>
+		  <para>DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN IRGENDEINER ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES BEZIEHT SICH AUCH OHNE EINSCHRÄNKUNG AUF GARANTIEN, DASS DIESES DOKUMENT ODER VERÄNDERTE FASSUNGEN DIESES DOKUMENTS FREI VON HANDELSDEFEKTEN, FÜR EINEN BESTIMMTEN ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER VERLETZT. DAS VOLLE RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES DOKUMENTS ODER VERÄNDERTE FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE EIN DOKUMENT ODER EINE VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE (NICHT DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN ODER FEHLERKORREKTUREN. DIESER HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER TEIL DIESER LIZENZ. DIE VERWENDUNG EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT GESTATTET AUßER UNTER BEACHTUNG DIESES HAFTUNGSAUSSCHLUSSES UND</para>
+		</listitem>
+		<listitem>
+		  <para>UNTER KEINEN UMSTÄNDEN UND AUF BASIS KEINER RECHTSGRUNDLAGE, EGAL OB DURCH UNERLAUBTEN HANDLUNGEN (EINSCHLIEßLICH FAHRLÄSSIGKEIT), VERTRAG ODER ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER EIN VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT WERDEN FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN JEGLICHER ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST VON KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN ODER ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT DER VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS ERGEBEN, AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN INFORMIERT WAREN.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Netzwerk-Verwaltungswerkzeug-Handbuch V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Netzwerk-Verwaltungswerkzeug-Handbuch V0.35</revnumber>
+	   <date>Juni 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Dieses Handbuch beschreibt Version 2.15.2 des Netzwerk-Verwaltungswerkzeugs.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Rückmeldungen</title> 
+	 <para>Um einen Fehler zu melden oder einen Vorschlag zum Netzwerk-Verwaltungswerkzeug oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <ulink url="ghelp:gnome-feedback" type="help">GNOME-Seite für Rückmeldungen</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Das Netzwerk-Verwaltungswerkzeug ermöglicht Ihnen einzustellen, wie sich Ihr System mit anderen Computern und mit dem Internet verbindet.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Netzwerk-Verwaltungswerkzeug</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Einführung</title> 
+    <para>Das <application>Netzwerk-Verwaltungswerkzeug</application> ermöglicht Ihnen einzustellen, wie sich Ihr System mit anderen Computern und mit dem Internet verbindet.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Erste Schritte</title>
+
+    <para>Sie können das <application>Netzwerk-Verwaltungswerkzeug</application> auf folgende Arten starten:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menü <guimenu>System</guimenu></term>
+	   <listitem>
+		<para>Wählen Sie <menuchoice><guisubmenu>Systemverwaltung</guisubmenu><guimenuitem>Netzwerk</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Befehlszeile</term>
+	   <listitem>
+		<para>Führen Sie den folgenden Befehl aus: <command>network-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Beim Start des <application>Netzwerk-Verwaltungswerkzeugs</application> werden Sie um die Eingabe des Systemverwalterpassworts gebeten. Dies ist erforderlich, weil die hier getätigten Einstellungen auf das gesamte System Einfluss nehmen.</para>
+
+    <para>Nach der Eingabe des Systemverwalter-Passworts wird folgendes Fenster angezeigt.</para>
+
+    <figure id="network-main-window">
+	 <title>Hauptfenster des Netzwerk-Verwaltungswerkzeugs</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/network-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Zeigt das Hauptfenster des Netzwerk-Verwaltungswerkzeugs.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Das Hauptfenster des <application>Netzwerk-Verwaltungswerkzeugs</application> enthält vier durch Reiter dargestellt Abschnitte:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guilabel>Verbindungen</guilabel></term>
+	   <listitem>
+		<para>Zeigt alle Netzwerkschnittstellen und erlaubt Ihnen, deren Einstellungen anzupassen.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><guilabel>Allgemein</guilabel></term>
+	   <listitem>
+		<para>Ermöglicht Ihnen die Änderung des Rechnernamens und des Namens der Domäne Ihres Systems.</para>
+	   </listitem>
+	 </varlistentry>
+
+    	 <varlistentry>
+	   <term><guilabel>DNS</guilabel></term>
+	   <listitem>
+		<para>Enthält zwei Abschnitte, zum einen den <guilabel>DNS-Server</guilabel>, den Ihr Computer verwendet, um IP-Adressen aus den Domänennamen aufzulösen. Die <guilabel>Suchdomänen</guilabel> sind die vorgegebenen Domänen, auf denen Ihr System nach irgeneinem Rechner sucht, falls keine Domäne angegeben wurde.</para>
+	   </listitem>
+	 </varlistentry>
+
+      <varlistentry>
+	   <term><guilabel>Rechner</guilabel></term>
+	   <listitem>
+		<para>Zeigt eine Liste der Aliase zum Zugriff auf andere Rechner.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Benutzung</title>
+
+    <sect2 id="tool-modify-connection">
+	 <title>So ändern Sie Verbindungseinstellungen</title>
+	 <para>Wählen Sie im Abschnitt <guilabel>Verbindungen</guilabel> die Schnittstelle aus, die Sie anpassen wollen, und klicken dann auf den Knopf <guilabel>Eigenschaften</guilabel>. Abhängig von der Art der Schnittstelle können Sie hier verschiedene Daten ändern. </para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Ethernet- und IRLAN-Schnittstellen</term>
+		<listitem>
+		  <para>Sie können die Art der Schnittstellenkonfiguration ändern (DHCP oder manuell). Falls die Schnittstelle manuell konfiguriert wird, können sie auch IP-Adresse, Netzmaske und Gateway ändern.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Drahtlose Schnittstellen</term>
+		<listitem>
+		  <para>Sie können die Art der Schnittstellenkonfiguration ändern (DHCP oder manuell). Falls die Schnittstelle manuell konfiguriert wird, können sie auch IP-Adresse, Netzmaske und Gateway ändern. Ebenfalls lässt sich der Netzwerkname (ESSID) dieser Schnittstelle ändern.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Parallele Schnittstellen</term>
+		<listitem>
+		  <para>Sie können sowohl die IP-Adresse der Schnittstelle als auch die entfernte IP-Adresse ändern.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>PPP/Modem-Schnittstellen</term>
+		<listitem>
+		  <para>Sie können am Modem-Gerät ändern, ob Sie Tonwahl oder Impulswahl verwenden wollen, die Modem-Lautstärke, die Telefonnummer, den von Ihrem ISP zur Verfügung gestellten Benutzernamen und das Passwort sowie einige erweiterte PPP-Einstellungen.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2>
+	 <title>So aktivieren oder deaktivieren Sie eine Schnittstelle</title>
+	 <para>Aktivieren oder deaktivieren Sie im Abschnitt <guilabel>Verbindungen</guilabel> das Kontrollkästchen neben der Schnittstelle.</para>
+    </sect2>
+    
+    <sect2>
+	 <title>So ändern Sie Ihren Rechnernamen und den Namen der Domäne</title>
+	 <para>Ändern Sie im Abschnitt <guilabel>Allgemein</guilabel> die Einträge für den Rechnernamen oder den Namen der Domäne in den Eingabefeldern.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So fügen Sie einen neuen Domain-Name-Server hinzu</title>
+	 <para>Klicken Sie im Abschnitt <guilabel>DNS-Server</guilabel> auf den Knopf <guilabel>Hinzufügen</guilabel>. Dann geben Sie eine neue Listenzeile mit dem Namen des DNS-Servers ein.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So entfernen Sie einen Domain Name Server (DNS)</title>
+	 <para>Wählen Sie im Abschnitt <guilabel>DNS-Server</guilabel> eine DNS-IP-Adresse in der Liste aus und klicken Sie auf den Knopf <guilabel>Entfernen</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So fügen Sie einen neuen Domain-Name-Server hinzu</title>
+	 <para>Klicken Sie im Abschnitt <guilabel>Suchdomänen</guilabel> auf den Knopf <guilabel>Hinzufügen</guilabel>. Dann geben Sie eine neue Listenzeile mit dem Namen der neuen Suchdomäne ein.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So entfernen Sie einen Domain Name Server (DNS)</title>
+	 <para>Wählen Sie im Abschnitt <guilabel>Suchdomänen</guilabel> eine Suchdomäne in der Liste aus und klicken Sie auf den Knopf <guilabel>Entfernen</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So fügen Sie einen neuen Rechner-Alias hinzu</title>
+	 <para>Klicken Sie im Abschnitt <guilabel>Rechner</guilabel> auf den Knopf <guilabel>Hinzufügen</guilabel> und geben Sie im sich öffnenden Fenster eine IP-Adresse sowie darauf verweisende Aliase ein.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So ändern Sie einen Rechner-Alias</title>
+	 <para>Wählen Sie einen Alias im Abschnitt <guilabel>Rechner</guilabel> und klicken dann in der Liste auf den Knopf <guilabel>Eigenschaften</guilabel>. Im sich öffnenden Fenster können sie alle Alias-Einstellungen bearbeiten.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So entfernen Sie einen Rechner-Alias</title>
+	 <para>Wählen Sie im Abschnitt <guilabel>Rechner</guilabel> einen Alias aus der Liste und klicken dann auf den Knopf <guilabel>Entfernen</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-profile">
+	 <title>So speichern Sie Ihre aktuelle Netzwerkonfiguration als »Ort«</title>
+	 <para>Klicken Sie auf den Knopf <guilabel>Hinzufügen</guilabel> neben dem <guilabel>Orte</guilabel>-Menü. Dann geben Sie in dem aufklappenden Fenster den Namen des Ortes ein.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So entfernen Sie einen Ort</title>
+	 <para>Wenn sie auf den Knopf <guilabel>Entfernen</guilabel> neben dem Menü <guilabel>Standorte</guilabel> klicken, wird das ausgewählte Profil gelöscht.</para>
+    </sect2>
+
+    <sect2>
+	 <title>So ändern Sie einen Ort</title>
+	 <para>Wenn Sie einen Standort im Menü <guilabel>Standorte</guilabel> wählen, wird die gesamte Konfiguration automatisch auf den gewählten Standort gesetzt.</para>
+    </sect2>
+  </sect1>
+</article>

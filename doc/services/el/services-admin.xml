@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Services Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="el">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Εγχειρίδιο Εργαλείου διαχείρισης υπηρεσιών</title> 
+    <copyright>
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2007</year><holder>Γιάννης Κατσαμπίρης (giannis1_86@homail.com)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink type="help" url="ghelp:fdl">σύνδεσμο</ulink>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με το παρόν εγχειρίδιο.</para>
+         <para>Αυτό το εγχειρίδιο αποτελεί μέρος της συλλογής εγχειριδίων του GNOME που διανέμονται υπό τους όρους της GFDL. Αν επιθυμείτε να διανείμετε το παρόν εγχειρίδιο ξεχωριστά από τη συλλογή, οφείλετε να προσθέσετε στο εγχειρίδιο αντίγραφο της άδειας χρήσης, όπως προβλέπεται στο άρθρο 6 της άδειας.</para>
+
+	<para>Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για την διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως εμπορικά σήματα. Σε όποιο σημείο της τεκμηρίωσης GNOME τυχόν εμφανίζονται αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης GNOME έχουν λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες ή τα αρχικά αυτών θα γράφονται με κεφαλαίους χαρακτήρες.</para>
+
+	<para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΑΥΤΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΕΛΕΥΘΕΡΗΣ ΑΔΕΙΑΣ ΤΕΚΜΗΡΙΩΣΗΣ GNU (GFDL) ΚΑΙ ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ ΔΙΕΥΚΡΙΝΙΣΗ ΟΤΙ: <orderedlist>
+		<listitem>
+		  <para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ "ΩΣ ΕΧΕΙ", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΗ ΕΓΓΥΗΣΗ, ΕΙΤΕ ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΤΗΣ ΕΓΓΥΗΣΗΣ ΟΤΙ ΤΟ ΕΓΓΡΑΦΟ, Ή Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ ΚΑΙ ΔΕΝ ΠΡΟΣΒΑΛΛΕΙ ΔΙΚΑΙΩΜΑΤΑ ΤΡΙΤΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΗΣ ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΟΠΟΙΟΔΗΠΟΤΕ ΕΓΓΡΑΦΟ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΔΗΜΙΟΥΡΓΟΣ Ή ΟΠΟΙΟΣΔΗΠΟΤΕ ΣΥΝΤΕΛΕΣΤΗΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ Ή ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. ΔΕΝ ΕΠΙΤΡΕΠΕΤΑΙ ΟΥΔΕΜΙΑ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ ΣΥΜΦΩΝΑ ΜΕ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΠΑΡΟΥΣΑΣ, ΠΑΡΑ ΜΟΝΟ ΕΑΝ ΣΥΝΟΔΕΥΕΤΑΙ ΑΠΟ ΤΗΝ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ· ΚΑΙ</para>
+		</listitem>
+		<listitem>
+		  <para>Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ Ή ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ ΟΠΟΙΩΝΔΗΠΟΤΕ ΕΚ ΤΩΝ ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ, ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΕΡΜΗΝΕΙΑ ΝΟΜΟΥ, ΕΙΤΕ ΕΞ ΑΔΙΚΟΠΡΑΞΙΑΣ (ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ) ΕΙΤΕ ΣΤΟ ΠΛΑΙΣΙΟ ΣΥΜΒΑΤΙΚΗΣ Ή ΑΛΛΗΣ ΥΠΟΧΡΕΩΣΗΣ, ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ Ή ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΖΗΜΙΩΝ ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΙΑΣ Ή ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Ή ΚΑΘΕ ΑΛΛΗΣ ΖΗΜΙΑΣ Ή ΑΠΩΛΕΙΑΣ ΠΟΥ ΟΦΕΙΛΕΤΑΙ Ή ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ ΓΝΩΣΗ ΤΗΣ ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Εγχειρίδιο Εργαλείου διαχείρισης υπηρεσιών V2.15.2</revnumber>
+	   <date>Αύγουστος 2006</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos,Garnacho,Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos,Garnacho,Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision>
+	   <revnumber>Εγχειρίδιο Εργαλείου διαχείρισης υπηρεσιών V0.35</revnumber>
+	   <date>Ιούνιος 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos,Garnacho,Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos,Garnacho,Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Η παρούσα τεκμηρίωση περιγράφει την έκδοση 2.15.2 του Εργαλείου διαχείρισης υπηρεσιών συστήματος.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Ανάδραση</title> 
+	 <para>Για να αναφέρετε μία αλλαγή ή να κάνετε μια πρόταση σε σχέση με το Εργαλείο διαχείρισης υπηρεσιών συστήματος ή με αυτή την τεκμηρίωση, ακολουθήστε τις διευθύνσεις στο <ulink url="ghelp:gnome-feedback" type="help">Σελίδα ανάδρασης του GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Το  Εργαλείο Υπηρεσιών Διαχείρισης Συστήματος σας επιτρέπει να προσδιορίσετε ποιες υπηρεσίες θα εκκινούνται κατά τη διάρκεια της φόρτωσης του συστήματος.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Εργαλείο διαχείρισης υπηρεσιών</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Εισαγωγή</title> 
+    <para>Το <application>Εργαλείο διαχείρισης υπηρεσιών</application> σας επιτρέπει να προσδιορίσετε ποιες υπηρεσίες θα εκκινούνται κατά τη διάρκεια της εκκίνησης του συστήματος.</para>
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Για να ξεκινήσετε</title>
+
+    <para>Μπορείτε να ξεκινήσετε το <application>Εργαλείο διαχείρισης υπηρεσιών συστήματος</application> με τους ακόλουθους τρόπους:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Μενού <guimenu> Σύστημα</guimenu></term>
+	   <listitem>
+		<para>Επιλέξτε <menuchoice><guisubmenu>Διαχείριση</guisubmenu><guimenuitem>Υπηρεσίες</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Γραμμή εντολών</term>
+	   <listitem>
+		<para>Εκτέλεστε την ακόλουθη εντολή: <command>services-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Όταν ξεκινήσετε το <application>Εργαλείο διαχείρισης υπηρεσιών</application>, θα σας ζητηθεί ο κωδικός διαχείρισης συστήματος, αυτό είναι απαραίτητο επειδή οι επιλογές που θα πραγματοποιηθούν με αυτό το εργαλείο θα επηρεάσουν ολόκληρο το σύστημα.</para>
+
+    <para>Μετά από την συμπλήρωση του κωδικού Διαχείρισης Συστήματος, θα εμφανιστεί το ακόλουθο παράθυρο.</para>
+
+    <figure id="services-main-window">
+	 <title>Εργαλείο Υπηρεσιών Διαχείρισης Συστήματος κύριο παράθυρο</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/services-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Εμφάνιση του κύριου παραθύρου του Εργαλείου διαχείρισης υπηρεσιών.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Το κύριο παράθυρο του <application>Εργαλείου διαχείρισης υπηρεσιών</application>περιέχει τα ακόλουθα στοιχεία:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Λίστα υπηρεσιών</term>
+	   <listitem>
+		<para>Είναι μία λίστα των κύριων υπηρεσιών που έχουν ήδη εγκατασταθεί στο σύστημα, το κουτί ελέγχου δείχνει ποια υπηρεσία είναι ενεργή ή όχι.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Χρήση</title>
+
+    <sect2>
+	 <title>Για να ενεργοποιήσετε ή να απενεργοποιήσετε μία υπησεσία κατά την εκκίνηση του συστήματος.</title>
+	 <para>Ενεργοποίηση ή απενεργοποίηση του κουτιού ελέγχου σε σχέση με την υπηρεσία, στην λίστα υπηρεσιών.</para>
+    </sect2>
+  </sect1>
+</article>

@@ -1,0 +1,31 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gnome-system-tools
+Source: https://ftp.gnome.org/pub/GNOME/sources/gnome-system-tools/
+
+Files: *
+Copyright: 2002-2003 Jean-Baptiste LAMY
+            the full list of authors is in:
+                /usr/share/doc/gnome-system-tools/AUTHORS
+License: GPL-2+
+
+Files: debian/*
+Copyright: This package was debianized by Jose Carlos Garcia Sogo <jsogo@debian.org>
+           on Sun, 05 Aug 2001 11:45:14 +0200.
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.

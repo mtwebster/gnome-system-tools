@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/cdbs/1/rules/autoreconf.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/gnome.mk
+
+LDFLAGS += -Wl,-z,defs -Wl,-O1
+
+DEB_CONFIGURE_EXTRA_FLAGS += --disable-schemas-install \
+	--disable-nautilus \
+	--disable-services \
+	--disable-network \
+	--disable-scrollkeeper \
+	--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
+
+TARBALL_EXT = tar.bz2
+
+DEB_DH_MAKESHLIBS_ARGS_gnome-system-tools += --no-act
+
+binary-install/gnome-system-tools::
+	rm -rfv debian/gnome-system-tools/var/scrollkeeper
