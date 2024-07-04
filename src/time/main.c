@@ -39,7 +39,6 @@
 #include "tz.h"
 #include "e-map/e-map.h"
 #include "tz-map.h"
-#include "ntp-servers-list.h"
 
 static const gchar *policy_widgets [] = {
 	"timezone_button",
@@ -153,8 +152,6 @@ main (int argc, char *argv[])
 
 	gst_init_tool ("time-admin", argc, argv, NULL);
 	tool = GST_TOOL (gst_time_tool_new ());
-
-	gst_dialog_require_authentication_for_widgets (tool->main_dialog, policy_widgets);
 
 	gtk_widget_show (GTK_WIDGET (tool->main_dialog));
 	gtk_main ();

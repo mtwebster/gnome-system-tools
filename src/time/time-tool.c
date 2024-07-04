@@ -21,10 +21,9 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <dbus/dbus.h>
 #include "time-tool.h"
 #include "gst.h"
-#include "ntp-servers-list.h"
+#include "fdo-timedate1-dbus.h"
 
 #define GST_TIME_TOOL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GST_TYPE_TIME_TOOL, GstTimeToolPrivate))
 #define APPLY_CONFIG_TIMEOUT 2000
@@ -41,8 +40,8 @@ struct _GstTimeToolPrivate {
 
 	guint configuration_changed_id;
 
-	DBusConnection *bus_connection;
-	gint cookie;
+	GDBusConnection *connection;
+    GDBusProxy *proxy;
 };
 
 enum {
@@ -73,6 +72,16 @@ static void  on_option_configuration_changed (GtkWidget   *widget,
 
 G_DEFINE_TYPE (GstTimeTool, gst_time_tool, GST_TYPE_TOOL);
 
+static struct tm *
+get_current_time (void)
+{
+    time_t tt;
+    tzset();
+    tt=time(NULL);
+
+    return localtime(&tt);
+}
+
 static void
 gst_time_tool_class_init (GstTimeToolClass *class)
 {
@@ -90,126 +99,40 @@ gst_time_tool_class_init (GstTimeToolClass *class)
 }
 
 static void
-get_ntp_service (GstTimeTool *tool)
-{
-	GObject *service;
-	OobsList *list;
-	OobsListIter iter;
-	gboolean valid;
-	GstServiceRole role;
-
-	list = oobs_services_config_get_services (OOBS_SERVICES_CONFIG (tool->services_config));
-	valid = oobs_list_get_iter_first (list, &iter);
-
-	while (valid) {
-		service = oobs_list_get (list, &iter);
-		role = gst_service_get_role (OOBS_SERVICE (service));
-
-		if (role == GST_ROLE_NTP_SERVER)
-			tool->ntp_service = g_object_ref (service);
-
-		g_object_unref (service);
-		valid = oobs_list_iter_next (list, &iter);
-	}
-}
-
-static void
 gst_time_tool_init (GstTimeTool *tool)
 {
-	DBusError error;
 	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
 
-	dbus_error_init (&error);
-	priv->bus_connection = dbus_bus_get (DBUS_BUS_SESSION, &error);
-	priv->cookie = 0;
+    GError *error = NULL;
 
-	if (dbus_error_is_set (&error)) {
-		g_warning ("%s", error.message);
-		dbus_error_free (&error);
-	}
+    priv->connection = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
+    if (priv->connection == NULL)
+    {
+        g_critical ("Could not get system bus: %s", error->message);
+    }
 
-	tool->time_config = oobs_time_config_get ();
-	gst_tool_add_configuration_object (GST_TOOL (tool), tool->time_config, TRUE);
-
-	tool->ntp_config = oobs_ntp_config_get ();
-	gst_tool_add_configuration_object (GST_TOOL (tool), tool->ntp_config, TRUE);
-
-	tool->services_config = oobs_services_config_get ();
-	gst_tool_add_configuration_object (GST_TOOL (tool), tool->services_config, TRUE);
-}
-
-static void
-inhibit_screensaver (GstTimeTool *tool,
-		     gboolean     inhibit)
-{
-	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
-	DBusMessage *message, *reply;
-	DBusMessageIter iter;
-
-	if (!priv->bus_connection)
-		return;
-
-	if (inhibit) {
-		const gchar *appname = "Time-admin";
-		const gchar *reason = "Changing time";
-
-		g_return_if_fail (priv->cookie == 0);
-
-		message = dbus_message_new_method_call (SCREENSAVER_SERVICE,
-							SCREENSAVER_PATH,
-							SCREENSAVER_INTERFACE,
-							"Inhibit");
-		/* set args */
-		dbus_message_iter_init_append (message, &iter);
-		dbus_message_iter_append_basic (&iter, DBUS_TYPE_STRING, &appname);
-		dbus_message_iter_append_basic (&iter, DBUS_TYPE_STRING, &reason);
-
-		reply = dbus_connection_send_with_reply_and_block (priv->bus_connection, message, -1, NULL);
-
-		if (reply) {
-			/* get cookie */
-			dbus_message_iter_init (reply, &iter);
-			dbus_message_iter_get_basic (&iter, &priv->cookie);
-			dbus_message_unref (reply);
-		}
-
-		dbus_message_unref (message);
-	} else if (!inhibit && priv->cookie != 0) {
-		message = dbus_message_new_method_call (SCREENSAVER_SERVICE,
-							SCREENSAVER_PATH,
-							SCREENSAVER_INTERFACE,
-							"UnInhibit");
-		/* set args */
-		dbus_message_iter_init_append (message, &iter);
-		dbus_message_iter_append_basic (&iter, DBUS_TYPE_INT32, &priv->cookie);
-
-		dbus_connection_send (priv->bus_connection, message, NULL);
-		dbus_message_unref (message);
-
-		priv->cookie = 0;
-	}
+    priv->proxy = get_timedate1_proxy (priv->connection);
 }
 
 static gboolean
 on_apply_timeout (GstTimeTool *tool)
 {
-	guint year, month, day, hour, minute, second;
+    GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
+	gint year, month, day;
+    guint hour, minute, second;
 
 	gtk_calendar_get_date (GTK_CALENDAR (tool->calendar), &year, &month, &day);
 	hour   = (guint) gtk_spin_button_get_value (GTK_SPIN_BUTTON (tool->hours));
 	minute = (guint) gtk_spin_button_get_value (GTK_SPIN_BUTTON (tool->minutes));
 	second = (guint) gtk_spin_button_get_value (GTK_SPIN_BUTTON (tool->seconds));
 
-	inhibit_screensaver (tool, TRUE);
+    GDateTime *dt = g_date_time_new_local ((guint) year, (guint) month - 1, (guint) day, hour, minute, second);
+    fdo_timedate1_set_time (priv->proxy, g_date_time_to_unix (dt));
+    g_date_time_unref (dt);
 
-	oobs_time_config_set_time (OOBS_TIME_CONFIG (tool->time_config),
-				   (gint) year, (gint) month, (gint) day,
-				   (gint) hour, (gint) minute, (gint)second);
-
-	gst_tool_commit (GST_TOOL (tool), tool->time_config);
 	gst_time_tool_start_clock (tool);
 
-	inhibit_screensaver (tool, FALSE);
+    priv->apply_timeout = 0;
 
 	return FALSE;
 }
@@ -221,7 +144,7 @@ update_apply_timeout (GstTimeTool *tool)
 
 	gst_time_tool_stop_clock (tool);
 
-	if (priv->apply_timeout) {
+	if (priv->apply_timeout > 0) {
 		g_source_remove (priv->apply_timeout);
 		priv->apply_timeout = 0;
 	}
@@ -340,7 +263,7 @@ prepare_spin_button (GstTool *tool, const gchar *widget_name)
 	return widget;
 }
 
-void
+static void
 init_timezone (GstTimeTool *time_tool)
 {
 	GstTool *tool = GST_TOOL (time_tool);
@@ -365,92 +288,19 @@ init_timezone (GstTimeTool *time_tool)
 	time_tool->timezone_dialog = gst_dialog_get_widget (tool->main_dialog, "time_zone_window");
 }
 
-static gboolean
-check_ntp_support (GstTool  *tool)
-{
-	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
-	GtkWidget *message, *widget;
-	gint response;
-
-	if (GST_TIME_TOOL (tool)->ntp_service)
-		return TRUE;
-	else {
-		/* Be sure we take into account newly installed NTP support */
-		oobs_object_update (OOBS_OBJECT (GST_TIME_TOOL (tool)->services_config));
-		get_ntp_service (GST_TIME_TOOL (tool));
-
-		if (GST_TIME_TOOL (tool)->ntp_service)
-			return TRUE;
-	}
-
-	widget = gst_dialog_get_widget (tool->main_dialog, "configuration_options");
-	g_signal_handler_block (widget, priv->configuration_changed_id);
-	gtk_combo_box_set_active (GTK_COMBO_BOX (widget), CONFIGURATION_MANUAL);
-	g_signal_handler_unblock (widget, priv->configuration_changed_id);
-
-	message = gtk_message_dialog_new (GTK_WINDOW (tool->main_dialog),
-					  GTK_DIALOG_MODAL,
-					  GTK_MESSAGE_INFO,
-					  GTK_BUTTONS_CLOSE,
-					  _("NTP support is not installed"));
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message),
-						  _("Please install and activate NTP support in the system to enable "
-						    "synchronization of your local time server with "
-						    "internet time servers."));
-
-	gtk_dialog_add_button (GTK_DIALOG (message), _("Install NTP support"), GTK_RESPONSE_OK);
-	response = gtk_dialog_run (GTK_DIALOG (message));
-	gtk_widget_destroy (message);
-
-	if (response == GTK_RESPONSE_OK) {
-		const gchar *packages[] = { "ntp", NULL };
-
-		if (gst_packages_install (GTK_WINDOW (tool->main_dialog), packages)) {
-			gtk_combo_box_set_active (GTK_COMBO_BOX (widget), CONFIGURATION_AUTOMATIC);
-			gst_tool_update_config (tool);
-			gst_tool_update_gui (tool);
-
-			if (GST_TIME_TOOL (tool)->ntp_service)
-				return TRUE;
-		}
-	}
-
-	return FALSE;
-}
-
 static void
 on_option_configuration_changed (GtkWidget *widget,
 				 GstTimeTool *time_tool)
 {
+    GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (time_tool);
+
 	gint option;
 	gboolean active;
 
 	option = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 	active = (option == CONFIGURATION_AUTOMATIC);
 
-	if (check_ntp_support (GST_TOOL (time_tool))) {
-		const OobsServicesRunlevel *runlevel;
-
-		runlevel = oobs_services_config_get_default_runlevel (OOBS_SERVICES_CONFIG (time_tool->services_config));
-		oobs_service_set_runlevel_configuration (time_tool->ntp_service,
-							 (OobsServicesRunlevel *) runlevel,
-							 (active) ? OOBS_SERVICE_START : OOBS_SERVICE_STOP,
-							 0);
-
-		gst_tool_commit_async (GST_TOOL (time_tool), OOBS_OBJECT (time_tool->ntp_service),
-				       (active) ? _("Enabling NTP") : _("Disabling NTP"),
-				       NULL, NULL);
-	}
-}
-
-static void
-on_synchronize_now_clicked (GtkWidget *widget, gpointer data)
-{
-	GstTimeTool *tool;
-
-	tool = GST_TIME_TOOL (data);
-	gst_tool_commit_async (GST_TOOL (tool), tool->ntp_config,
-			       _("Synchronizing system clock"), NULL, NULL);
+    fdo_timedate1_set_ntp (priv->proxy, active);
 }
 
 static void
@@ -565,15 +415,12 @@ gst_time_tool_constructor (GType                  type,
 	g_signal_connect (G_OBJECT (time_tool->calendar), "day-selected",
 			  G_CALLBACK (on_calendar_day_selected), time_tool);
 
-	time_tool->ntp_list = ntp_servers_list_get (time_tool);
 	init_timezone (time_tool);
 	add_options_combo (time_tool);
 
-	time_tool->synchronize_now = gst_dialog_get_widget (GST_TOOL (time_tool)->main_dialog, "update_time");
-	g_signal_connect (G_OBJECT (time_tool->synchronize_now), "clicked",
-			  G_CALLBACK (on_synchronize_now_clicked), time_tool);
-
 	gtk_window_set_resizable (GTK_WINDOW (GST_TOOL (time_tool)->main_dialog), FALSE);
+
+    gst_tool_update_gui (GST_TOOL (object));
 
 	return object;
 }
@@ -583,32 +430,7 @@ gst_time_tool_finalize (GObject *object)
 {
 	GstTimeTool *tool = GST_TIME_TOOL (object);
 
-	/* FIXME: missing things to free */
-	g_object_unref (tool->time_config);
-
 	(* G_OBJECT_CLASS (gst_time_tool_parent_class)->finalize) (object);
-}
-
-static void
-update_servers_list (GstTimeTool *tool)
-{
-	OobsList *list;
-	OobsListIter iter;
-	GObject *server;
-	gboolean valid;
-
-	/* FIXME: restore NTP servers to NULL */
-	list = oobs_ntp_config_get_servers (OOBS_NTP_CONFIG (tool->ntp_config));
-	valid = oobs_list_get_iter_first (list, &iter);
-
-	while (valid) {
-		server = oobs_list_get (list, &iter);
-		ntp_servers_list_check (GST_TIME_TOOL (tool)->ntp_list,
-					&iter, OOBS_NTP_SERVER (server));
-
-		g_object_unref (server);
-		valid = oobs_list_iter_next (list, &iter);
-	}
 }
 
 static void
@@ -618,29 +440,18 @@ gst_time_tool_update_gui (GstTool *tool)
 	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (time_tool);
 	GtkWidget *timezone, *configuration_options, *timeserver_button;
 	gint option = CONFIGURATION_MANUAL;
-	OobsServiceStatus active;
 
 	gst_time_tool_start_clock (GST_TIME_TOOL (tool));
 	timezone = gst_dialog_get_widget (tool->main_dialog, "tzlabel");
 	configuration_options = gst_dialog_get_widget (tool->main_dialog, "configuration_options");
 	timeserver_button = gst_dialog_get_widget (tool->main_dialog, "timeserver_button");
 
-	gtk_label_set_text (GTK_LABEL (timezone),
-			    oobs_time_config_get_timezone (OOBS_TIME_CONFIG (time_tool->time_config)));
-
-	update_servers_list (GST_TIME_TOOL (tool));
-
-	if (time_tool->ntp_service) {
-		const OobsServicesRunlevel *runlevel;
-
-		runlevel = oobs_services_config_get_default_runlevel (OOBS_SERVICES_CONFIG (time_tool->services_config));
-		oobs_service_get_runlevel_configuration (time_tool->ntp_service, (OobsServicesRunlevel *) runlevel, &active, NULL);
-
-		if (active == OOBS_SERVICE_START)
-			option = CONFIGURATION_AUTOMATIC;
-	}
+	gtk_label_set_text (GTK_LABEL (timezone), fdo_timedate1_get_timezone (priv->connection));
 
 	g_signal_handler_block (configuration_options, priv->configuration_changed_id);
+
+    option = fdo_timedate1_get_ntp (priv->connection) ? CONFIGURATION_AUTOMATIC : CONFIGURATION_MANUAL;
+
 	gtk_combo_box_set_active (GTK_COMBO_BOX (configuration_options), option);
 	g_signal_handler_unblock (configuration_options, priv->configuration_changed_id);
 }
@@ -648,7 +459,6 @@ gst_time_tool_update_gui (GstTool *tool)
 static void
 gst_time_tool_update_config (GstTool *tool)
 {
-	get_ntp_service (GST_TIME_TOOL (tool));
 }
 
 static void
@@ -656,7 +466,7 @@ gst_time_tool_close (GstTool *tool)
 {
 	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
 
-	if (priv->apply_timeout) {
+	if (priv->apply_timeout > 0) {
 		/* disable timeout and apply changes
 		 * immediately, the tool is closing! */
 		g_source_remove (priv->apply_timeout);
@@ -676,6 +486,7 @@ gst_time_tool_new (void)
 			     "name", "time",
 			     "title", _("Time and Date Settings"),
 			     "icon", "time-admin",
+                 "show-lock-button", FALSE,
 			     NULL);
 }
 
@@ -697,23 +508,19 @@ thaw_clock (GstTimeTool *tool)
 	g_signal_handlers_unblock_by_func (tool->calendar, on_calendar_day_selected, tool);
 }
 
-void
+static void
 gst_time_tool_update_clock (GstTimeTool *tool)
 {
-	gint year, month, day, hour, minute, second;
-
-	oobs_time_config_get_time (OOBS_TIME_CONFIG (tool->time_config),
-				   &year, &month,  &day,
-				   &hour, &minute, &second);
+    struct tm *t = get_current_time ();
 
 	freeze_clock (tool);
 
-	gtk_calendar_select_month (GTK_CALENDAR (tool->calendar), month, year);
-	gtk_calendar_select_day   (GTK_CALENDAR (tool->calendar), day);
+	gtk_calendar_select_month (GTK_CALENDAR (tool->calendar), t->tm_mon, t->tm_year + 1900);
+	gtk_calendar_select_day   (GTK_CALENDAR (tool->calendar), t->tm_mday);
 
-	gtk_spin_button_set_value (GTK_SPIN_BUTTON (tool->hours),   (gfloat) hour);
-	gtk_spin_button_set_value (GTK_SPIN_BUTTON (tool->minutes), (gfloat) minute);
-	gtk_spin_button_set_value (GTK_SPIN_BUTTON (tool->seconds), (gfloat) second);
+	gtk_spin_button_set_value (GTK_SPIN_BUTTON (tool->hours),   (gfloat) t->tm_hour);
+	gtk_spin_button_set_value (GTK_SPIN_BUTTON (tool->minutes), (gfloat) t->tm_min);
+	gtk_spin_button_set_value (GTK_SPIN_BUTTON (tool->seconds), (gfloat) t->tm_sec);
 
 	thaw_clock (tool);
 }
@@ -733,7 +540,7 @@ gst_time_tool_start_clock (GstTimeTool *tool)
 {
 	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
 
-	if (!priv->clock_timeout) {
+	if (priv->clock_timeout == 0) {
 		/* Do a preliminary update, just for showing
 		   something with sense in the gui immediatly */
 		gst_time_tool_update_clock (tool);
@@ -747,7 +554,7 @@ gst_time_tool_stop_clock (GstTimeTool *tool)
 {
 	GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (tool);
 
-	if (priv->clock_timeout) {
+	if (priv->clock_timeout > 0) {
 		g_source_remove (priv->clock_timeout);
 		priv->clock_timeout = 0;
 	}
@@ -756,6 +563,7 @@ gst_time_tool_stop_clock (GstTimeTool *tool)
 void
 gst_time_tool_run_timezone_dialog (GstTimeTool *time_tool)
 {
+    GstTimeToolPrivate *priv = GST_TIME_TOOL_GET_PRIVATE (time_tool);
 	GstTool *tool;
 	GtkWidget *label;
 	const gchar *timezone;
@@ -765,7 +573,7 @@ gst_time_tool_run_timezone_dialog (GstTimeTool *time_tool)
 	tool  = GST_TOOL (time_tool);
 	label = gst_dialog_get_widget (tool->main_dialog, "tzlabel");
 
-	timezone = oobs_time_config_get_timezone (OOBS_TIME_CONFIG (time_tool->time_config));
+	timezone = fdo_timedate1_get_timezone (priv->connection);
 	e_tz_map_set_tz_from_name (time_tool->tzmap, timezone);
 
 	gtk_window_set_transient_for (GTK_WINDOW (time_tool->timezone_dialog),
@@ -783,8 +591,7 @@ gst_time_tool_run_timezone_dialog (GstTimeTool *time_tool)
 	tz_location = e_tz_map_get_location_by_name (time_tool->tzmap, tz_name);
 
 	if (!timezone || strcmp (tz_name, timezone) != 0) {
-		oobs_time_config_set_timezone (OOBS_TIME_CONFIG (time_tool->time_config), tz_name);
-		gst_tool_commit (GST_TOOL (time_tool), time_tool->time_config);
+        fdo_timedate1_set_timezone (priv->proxy, tz_name);
 		gtk_label_set_text (GTK_LABEL (label), tz_name);
 	}
 }
